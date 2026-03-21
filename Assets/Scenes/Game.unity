@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 793786424}
   m_Layer: 0
-  m_Name: ExplorerRoot
+  m_Name: ExplorerRoot ---Add all Player one features and UI here
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 969318394}
   m_Layer: 0
-  m_Name: GuideRoot
+  m_Name: GuideRoot --- Ill add Player two features here
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
