@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd20df6c9479f3d449851f4ca53de79e, type: 3}
+  m_Name: TestBook
+  m_EditorClassIdentifier: 
+  bookTitle: Ghosts
+  spreads:
+  - layout: {fileID: 7412207408150843326, guid: d2c5a580268cc044da834634fe33a373, type: 3}
+    textA: Test
+    textB: Test
+    textC: 
+    textD: 
+    imageA: {fileID: 0}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 6211519498159910813, guid: cc6383de98fd6294388821de6cde789f, type: 3}
+    textA: Test 2
+    textB: Test 2
+    textC: 
+    textD: 
+    imageA: {fileID: 0}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
