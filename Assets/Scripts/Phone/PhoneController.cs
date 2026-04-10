@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class PhoneController : MonoBehaviour
 {
     public enum PhoneApp { None, Camera }
@@ -8,26 +7,23 @@ public class PhoneController : MonoBehaviour
     [Header("App References")]
     public CameraApp cameraApp;
 
-    [Header("Settings")]
-    [Tooltip("Layer mask for clicking the phone when idle")]
-    public LayerMask phoneLayerMask;
+    [Header("UI References")]
+    public GameObject homeScreenRoot;
 
     private PhoneApp _activeApp = PhoneApp.None;
-    private Camera _mainCamera;
 
     public static PhoneController Instance { get; private set; }
 
-    void Awake()
+    private void Awake()
     {
         Instance = this;
-        _mainCamera = Camera.main;
     }
 
-    void Update()
+    private void Update()
     {
         if (_activeApp == PhoneApp.None)
         {
-            HandleIdleInput();
+            // Idle state, waiting for app icons to open apps
         }
         else
         {
@@ -35,28 +31,18 @@ public class PhoneController : MonoBehaviour
         }
     }
 
-    private void HandleIdleInput()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mouseWorld = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorld, Vector2.zero, Mathf.Infinity, phoneLayerMask);
-
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
-            {
-                OpenApp(PhoneApp.Camera);
-            }
-        }
-    }
-
     public void OpenApp(PhoneApp app)
     {
         _activeApp = app;
 
+        if (homeScreenRoot != null)
+            homeScreenRoot.SetActive(false);
+
         switch (app)
         {
             case PhoneApp.Camera:
-                cameraApp.Activate();
+                if (cameraApp != null)
+                    cameraApp.Activate();
                 break;
         }
     }
@@ -66,10 +52,14 @@ public class PhoneController : MonoBehaviour
         switch (_activeApp)
         {
             case PhoneApp.Camera:
-                cameraApp.Deactivate();
+                if (cameraApp != null)
+                    cameraApp.Deactivate();
                 break;
         }
 
         _activeApp = PhoneApp.None;
+
+        if (homeScreenRoot != null)
+            homeScreenRoot.SetActive(true);
     }
 }

@@ -2,51 +2,32 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class CameraApp : MonoBehaviour
 {
-
     [Header("Phone Movement")]
-    [Tooltip("The transform that moves to follow the mouse.")]
-    public Transform phoneTransform;
+    public RectTransform phoneRectTransform;
+    public Canvas parentCanvas;
 
-    [Tooltip("How quickly the phone lerps to the mouse position (0 = instant).")]
-    [Range(0f, 30f)]
-    public float followSpeed = 20f;
+    [Header("Return Settings")]
+    [Tooltip("How fast the phone returns to start position")]
+    public float returnSpeed = 5f;
 
-    [Tooltip("Hide app icons when in camera mode")]
+    [Header("Hide Icons")]
     public GameObject[] appIcons;
 
-    [Tooltip("Z depth in world-space for the phone while in camera mode.")]
-    public float phoneDepth = 0f;
-
     [Header("Viewfinder")]
-    [Tooltip("A Collider2D (trigger) centred on the phone's transparent window. " +
-             "Ghosts inside this area count as photographed.")]
     public Collider2D viewfinderCollider;
 
-    [Tooltip("The empty GameObject for the location of the phone")]
-    public Transform homePosition;
-
-    [Tooltip("Optional: a SpriteRenderer whose alpha is set to make the centre transparent.")]
-    public SpriteRenderer phoneBodyRenderer;
-
-    [Tooltip("Alpha for the phone body while camera is active (lower = more transparent centre illusion).")]
-    [Range(0f, 1f)]
-    public float activeBodyAlpha = 0.85f;
+    [Header("Optional Visuals")]
+    public CanvasGroup phoneCanvasGroup;
+    [Range(0f, 1f)] public float activeBodyAlpha = 0.85f;
 
     [Header("Ghost Detection")]
-    [Tooltip("Layer(s) that ghosts live on.")]
     public LayerMask ghostLayerMask;
-
-    [Tooltip("Tag used on ghost/spirit GameObjects.")]
     public string ghostTag = "Ghost";
 
     [Header("Photo Flash")]
-    [Tooltip("A full-screen UI Image (white, starts at alpha 0) used for the flash effect.")]
     public Image flashOverlay;
-
-    [Tooltip("How long the flash lasts in seconds.")]
     public float flashDuration = 0.25f;
 
     [Header("Audio")]
@@ -56,35 +37,33 @@ public class CameraApp : MonoBehaviour
 
     public System.Action<bool, GameObject> OnPhotoTaken;
 
-
     private bool _active;
-    private Camera _mainCamera;
     private float _originalBodyAlpha = 1f;
+    private Vector2 startPosition;
+    private Coroutine returnRoutine;
 
-
-    void Awake()
+    private void Awake()
     {
-        _mainCamera = Camera.main;
+        if (phoneRectTransform == null)
+            phoneRectTransform = transform as RectTransform;
 
-        if (phoneTransform == null)
-            phoneTransform = transform;
+        if (parentCanvas == null)
+            parentCanvas = GetComponentInParent<Canvas>();
 
-        if (phoneBodyRenderer != null)
-            _originalBodyAlpha = phoneBodyRenderer.color.a;
+        // SAVE START POSITION
+        startPosition = phoneRectTransform.anchoredPosition;
+
+        if (phoneCanvasGroup != null)
+            _originalBodyAlpha = phoneCanvasGroup.alpha;
 
         gameObject.SetActive(true);
         SetVisuals(false);
     }
 
-    private void OnMouseDown()
+    private void Update()
     {
         if (!_active)
-            Activate();
-    }
-
-    void Update()
-    {
-        if (!_active) return;
+            return;
 
         HandleMovement();
         HandleInput();
@@ -94,33 +73,51 @@ public class CameraApp : MonoBehaviour
     {
         _active = true;
         SetVisuals(true);
+
+        // Hide cursor
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
+
+        // Stop any return animation if active
+        if (returnRoutine != null)
+        {
+            StopCoroutine(returnRoutine);
+            returnRoutine = null;
+        }
     }
 
     public void Deactivate()
     {
         _active = false;
         SetVisuals(false);
-        phoneTransform.position = homePosition.position;
+
+        // Show cursor again
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        // Smooth return
+        if (returnRoutine != null)
+            StopCoroutine(returnRoutine);
+
+        returnRoutine = StartCoroutine(ReturnToStart());
     }
 
     private void HandleMovement()
     {
-        Vector3 mouseScreen = Input.mousePosition;
-        mouseScreen.z = _mainCamera.nearClipPlane + phoneDepth;
-        Vector3 targetWorld = _mainCamera.ScreenToWorldPoint(mouseScreen);
-        targetWorld.z = phoneDepth;
+        if (phoneRectTransform == null || parentCanvas == null)
+            return;
 
-        if (followSpeed <= 0f)
+        RectTransform canvasRect = parentCanvas.transform as RectTransform;
+
+        Vector2 localPoint;
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRect,
+            Input.mousePosition,
+            parentCanvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : parentCanvas.worldCamera,
+            out localPoint))
         {
-            phoneTransform.position = targetWorld;
-        }
-        else
-        {
-            phoneTransform.position = Vector3.Lerp(
-                phoneTransform.position,
-                targetWorld,
-                Time.deltaTime * followSpeed
-            );
+            // INSTANT movement (no lag)
+            phoneRectTransform.anchoredPosition = localPoint;
         }
     }
 
@@ -128,7 +125,11 @@ public class CameraApp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Deactivate();
+            if (PhoneController.Instance != null)
+                PhoneController.Instance.CloseCurrentApp();
+            else
+                Deactivate();
+
             return;
         }
 
@@ -150,20 +151,16 @@ public class CameraApp : MonoBehaviour
             PlaySound(ghostCapturedSound);
             Debug.Log($"[CameraApp] Ghost captured: {capturedGhost.name}");
         }
-        else
-        {
-            Debug.Log("[CameraApp] Photo taken — no ghost detected.");
-        }
 
         OnPhotoTaken?.Invoke(ghostCaptured, capturedGhost);
 
         StartCoroutine(FlashRoutine());
     }
 
-
     private GameObject FindGhostInViewfinder()
     {
-        if (viewfinderCollider == null) return null;
+        if (viewfinderCollider == null)
+            return null;
 
         Bounds b = viewfinderCollider.bounds;
         Collider2D[] hits = Physics2D.OverlapBoxAll(b.center, b.size, 0f, ghostLayerMask);
@@ -173,15 +170,18 @@ public class CameraApp : MonoBehaviour
             if (hit.CompareTag(ghostTag))
                 return hit.gameObject;
         }
+
         return null;
     }
 
     private IEnumerator FlashRoutine()
     {
-        if (flashOverlay == null) yield break;
+        if (flashOverlay == null)
+            yield break;
 
         float half = flashDuration * 0.5f;
         float t = 0f;
+
         while (t < half)
         {
             t += Time.deltaTime;
@@ -190,6 +190,7 @@ public class CameraApp : MonoBehaviour
         }
 
         t = 0f;
+
         while (t < half)
         {
             t += Time.deltaTime;
@@ -202,20 +203,33 @@ public class CameraApp : MonoBehaviour
 
     private void SetFlashAlpha(float alpha)
     {
-        if (flashOverlay == null) return;
+        if (flashOverlay == null)
+            return;
+
         Color c = flashOverlay.color;
         c.a = alpha;
         flashOverlay.color = c;
     }
 
+    private IEnumerator ReturnToStart()
+    {
+        Vector2 current = phoneRectTransform.anchoredPosition;
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime * returnSpeed;
+            phoneRectTransform.anchoredPosition = Vector2.Lerp(current, startPosition, t);
+            yield return null;
+        }
+
+        phoneRectTransform.anchoredPosition = startPosition;
+    }
+
     private void SetVisuals(bool show)
     {
-        if (phoneBodyRenderer != null)
-        {
-            Color c = phoneBodyRenderer.color;
-            c.a = show ? activeBodyAlpha : _originalBodyAlpha;
-            phoneBodyRenderer.color = c;
-        }
+        if (phoneCanvasGroup != null)
+            phoneCanvasGroup.alpha = show ? activeBodyAlpha : _originalBodyAlpha;
 
         if (viewfinderCollider != null)
             viewfinderCollider.enabled = show;
