@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d5cf61b2759c7468ac11c24f093757, type: 3}
+  m_Name: BookOpenButton
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 4533569678bfa2e41b17bc27cf4751e2, type: 3}
+  clickSound: {fileID: 8300000, guid: 690cceb8a360b9b4288450e0392a374b, type: 3}
+  disabledSound: {fileID: 0}
+  randomizePitch: 1
+  minPitch: 0.98
+  maxPitch: 1.02
+  volume: 1
