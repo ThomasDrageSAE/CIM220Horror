@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class SimpleDialogueUI : MonoBehaviour
     [Header("Typewriter")]
     [SerializeField] private float characterDelay = 0.03f;
 
+    public Action OnDialogueFinished;
+
     private string[] currentLines;
     private int currentIndex;
     private Coroutine typingCoroutine;
@@ -18,7 +21,6 @@ public class SimpleDialogueUI : MonoBehaviour
     private bool dialogueActive;
 
     public bool DialogueActive => dialogueActive;
-    public System.Action OnDialogueFinished;
 
     private void Awake()
     {
@@ -52,13 +54,9 @@ public class SimpleDialogueUI : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (isTyping)
-            {
                 FinishCurrentLineInstantly();
-            }
             else
-            {
                 NextLine();
-            }
         }
     }
 
@@ -140,6 +138,7 @@ public class SimpleDialogueUI : MonoBehaviour
 
         if (dialogueWindow != null)
             dialogueWindow.SetActive(false);
+
         OnDialogueFinished?.Invoke();
     }
 }

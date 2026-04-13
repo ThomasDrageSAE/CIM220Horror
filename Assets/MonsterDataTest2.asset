@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95b766b5441cbb47b5067934fdc2eb3, type: 3}
+  m_Name: MonsterDataTest2
+  m_EditorClassIdentifier: 
+  monsterName: Plant
+  description: 
+  monsterImage: {fileID: 5853661806726728228, guid: d39af2ace3139784f8569999fdc13091, type: 3}
+  spawnSound: {fileID: 0}
+  defeatSound: {fileID: 0}
+  backgroundImage: {fileID: 0}
+  introDialogue:
+  - Did that plant just move?
+  fightDialogue:
+  - Test
+  defeatDialogue:
+  - wow

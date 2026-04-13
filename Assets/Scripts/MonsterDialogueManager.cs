@@ -11,6 +11,12 @@ public class MonsterDialogueManager : MonoBehaviour
             dialogueUI.OnDialogueFinished += HandleDialogueFinished;
     }
 
+    private void OnDestroy()
+    {
+        if (dialogueUI != null)
+            dialogueUI.OnDialogueFinished -= HandleDialogueFinished;
+    }
+
     public void ShowLines(string[] lines)
     {
         if (dialogueUI == null || lines == null || lines.Length == 0)
@@ -19,20 +25,14 @@ public class MonsterDialogueManager : MonoBehaviour
         dialogueUI.ShowLines(lines);
     }
 
-    private void HandleDialogueFinished()
-    {
-        if (encounterManager == null)
-            return;
-
-        // If monster is not defeated yet → show fight dialogue
-        if (!encounterManager.CurrentMonsterDefeated)
-        {
-            encounterManager.ShowFightDialogue();
-        }
-    }
-
     public bool IsDialogueActive()
     {
         return dialogueUI != null && dialogueUI.DialogueActive;
+    }
+
+    private void HandleDialogueFinished()
+    {
+        if (encounterManager != null)
+            encounterManager.OnDialogueSequenceFinished();
     }
 }

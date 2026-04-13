@@ -4,6 +4,14 @@ using UnityEngine.UI;
 
 public class MonsterEncounterManager : MonoBehaviour
 {
+    private enum DialoguePhase
+    {
+        None,
+        Intro,
+        Fight,
+        Defeat
+    }
+
     [Header("Level Data")]
     [SerializeField] private MonsterLevelSet[] levelSets;
 
@@ -19,10 +27,15 @@ public class MonsterEncounterManager : MonoBehaviour
     [SerializeField] private int currentLevel = 1;
 
     private MonsterData currentMonster;
-    private bool currentMonsterDefeated = false;
+    private bool currentMonsterDefeated;
+    private DialoguePhase currentDialoguePhase = DialoguePhase.None;
+    private bool fightDialogueShown;
+    private bool monsterRevealed;
 
     public MonsterData CurrentMonster => currentMonster;
     public bool CurrentMonsterDefeated => currentMonsterDefeated;
+
+    // ✅ ADDED THIS LINE (fix for your error)
     public int CurrentLevel => currentLevel;
 
     private void Start()
@@ -34,20 +47,15 @@ public class MonsterEncounterManager : MonoBehaviour
     {
         currentLevel = levelNumber;
         currentMonsterDefeated = false;
+        fightDialogueShown = false;
+        monsterRevealed = false;
+        currentDialoguePhase = DialoguePhase.None;
 
         MonsterLevelSet levelSet = GetLevelSet(levelNumber);
 
-        if (levelSet == null)
+        if (levelSet == null || levelSet.possibleMonsters == null || levelSet.possibleMonsters.Length == 0)
         {
-            Debug.LogWarning("No MonsterLevelSet found for level " + levelNumber);
-            currentMonster = null;
-            RefreshUI();
-            return;
-        }
-
-        if (levelSet.possibleMonsters == null || levelSet.possibleMonsters.Length == 0)
-        {
-            Debug.LogWarning("Level " + levelNumber + " has no possible monsters assigned.");
+            Debug.LogWarning("No valid monster level set found for level " + levelNumber);
             currentMonster = null;
             RefreshUI();
             return;
@@ -56,10 +64,7 @@ public class MonsterEncounterManager : MonoBehaviour
         int randomIndex = Random.Range(0, levelSet.possibleMonsters.Length);
         currentMonster = levelSet.possibleMonsters[randomIndex];
 
-        Debug.Log("Level " + levelNumber + " selected monster: " + currentMonster.monsterName);
-
-        RefreshUI();
-        PlaySpawnSound();
+        HideMonsterUI();
         ShowIntroDialogue();
     }
 
@@ -69,36 +74,51 @@ public class MonsterEncounterManager : MonoBehaviour
             return;
 
         currentMonsterDefeated = true;
+        currentDialoguePhase = DialoguePhase.Defeat;
 
-        PlayDefeatSound();
         ShowDefeatDialogue();
         RefreshUI();
     }
 
-    public void SetMonsterDefeated(bool defeated)
+    public void ShowFightDialogue()
     {
-        currentMonsterDefeated = defeated;
+        if (currentMonster == null || dialogueManager == null || fightDialogueShown)
+            return;
 
-        if (defeated)
+        if (currentMonster.fightDialogue == null || currentMonster.fightDialogue.Length == 0)
+            return;
+
+        currentDialoguePhase = DialoguePhase.Fight;
+        fightDialogueShown = true;
+        dialogueManager.ShowLines(currentMonster.fightDialogue);
+    }
+
+    public void OnDialogueSequenceFinished()
+    {
+        if (currentMonster == null)
+            return;
+
+        if (currentDialoguePhase == DialoguePhase.Intro)
         {
-            PlayDefeatSound();
-            ShowDefeatDialogue();
+            RevealMonsterUI();
+            ShowFightDialogue();
+            return;
         }
 
-        RefreshUI();
+        currentDialoguePhase = DialoguePhase.None;
+    }
+
+    public void ShowInteractionDialogue(string[] lines)
+    {
+        if (dialogueManager == null || lines == null || lines.Length == 0)
+            return;
+
+        dialogueManager.ShowLines(lines);
     }
 
     public void NextLevel()
     {
         StartLevel(currentLevel + 1);
-    }
-
-    public void ShowFightDialogue()
-    {
-        if (currentMonster == null || dialogueManager == null)
-            return;
-
-        dialogueManager.ShowLines(currentMonster.fightDialogue);
     }
 
     private MonsterLevelSet GetLevelSet(int levelNumber)
@@ -117,6 +137,12 @@ public class MonsterEncounterManager : MonoBehaviour
 
     private void RefreshUI()
     {
+        if (!monsterRevealed)
+        {
+            HideMonsterUI();
+            return;
+        }
+
         if (monsterImageDisplay != null)
         {
             if (currentMonster != null && currentMonster.monsterImage != null)
@@ -133,35 +159,29 @@ public class MonsterEncounterManager : MonoBehaviour
         }
 
         if (monsterNameText != null)
-        {
-            monsterNameText.text = currentMonster != null
-                ? currentMonster.monsterName
-                : "No Monster";
-        }
+            monsterNameText.text = currentMonster != null ? currentMonster.monsterName : "No Monster";
 
         if (backgroundManager != null)
+            backgroundManager.SetBackground(currentMonster != null ? currentMonster.backgroundImage : null);
+    }
+
+    private void RevealMonsterUI()
+    {
+        monsterRevealed = true;
+        RefreshUI();
+    }
+
+    private void HideMonsterUI()
+    {
+        if (monsterImageDisplay != null)
         {
-            Sprite bg = currentMonster != null ? currentMonster.backgroundImage : null;
-            backgroundManager.SetBackground(bg);
+            monsterImageDisplay.sprite = null;
+            monsterImageDisplay.color = new Color(1f, 1f, 1f, 0f);
+            monsterImageDisplay.enabled = false;
         }
-    }
 
-    private void PlaySpawnSound()
-    {
-        if (currentMonster == null || currentMonster.spawnSound == null)
-            return;
-
-        //if (GameAudioManager.Instance != null)
-            //GameAudioManager.Instance.Play(currentMonster.spawnSound);
-    }
-
-    private void PlayDefeatSound()
-    {
-        if (currentMonster == null || currentMonster.defeatSound == null)
-            return;
-
-        //if (GameAudioManager.Instance != null)
-            //GameAudioManager.Instance.Play(currentMonster.defeatSound);
+        if (monsterNameText != null)
+            monsterNameText.text = "";
     }
 
     private void ShowIntroDialogue()
@@ -169,12 +189,23 @@ public class MonsterEncounterManager : MonoBehaviour
         if (currentMonster == null || dialogueManager == null)
             return;
 
+        if (currentMonster.introDialogue == null || currentMonster.introDialogue.Length == 0)
+        {
+            RevealMonsterUI();
+            ShowFightDialogue();
+            return;
+        }
+
+        currentDialoguePhase = DialoguePhase.Intro;
         dialogueManager.ShowLines(currentMonster.introDialogue);
     }
 
     private void ShowDefeatDialogue()
     {
         if (currentMonster == null || dialogueManager == null)
+            return;
+
+        if (currentMonster.defeatDialogue == null || currentMonster.defeatDialogue.Length == 0)
             return;
 
         dialogueManager.ShowLines(currentMonster.defeatDialogue);
