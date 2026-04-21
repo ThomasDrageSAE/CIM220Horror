@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d95b766b5441cbb47b5067934fdc2eb3, type: 3}
-  m_Name: MonsterDataTest
+  m_Name: MonsterDataGhost2
   m_EditorClassIdentifier: 
-  monsterName: Test
-  description: test
-  monsterImage: {fileID: 3456834820136617469, guid: cb366301b2ee38f4f811473575f89d9a, type: 3}
+  monsterName: Ghost2
+  description: 
+  monsterImage: {fileID: -7690393027686545325, guid: a029f3d03b8588e44a91ebbd724b1875, type: 3}
   spawnSound: {fileID: 0}
   defeatSound: {fileID: 0}
   backgroundImage: {fileID: 6480572467985121676, guid: 61ad412ba236a434aa73f7414dada648, type: 3}
   introDialogue:
-  - I sense something watching me....
-  - ahhhhhh!
+  - Why do I hear galloping?
   fightDialogue:
-  - What is this!
+  - Is that a horse?
   defeatDialogue:
-  - No ones gonna belive me about this.
+  - Wow....

@@ -7,6 +7,9 @@ public class PhoneAppButton : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (PlayerInputLock.IsLocked)
+            return;
+        
         if (PhoneController.Instance != null)
             PhoneController.Instance.OpenApp(appToOpen);
     }

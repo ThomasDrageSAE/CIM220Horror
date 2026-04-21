@@ -40,6 +40,8 @@ public class SimpleDialogueUI : MonoBehaviour
         currentIndex = 0;
         dialogueActive = true;
 
+        PlayerInputLock.SetLocked(true);
+
         if (dialogueWindow != null)
             dialogueWindow.SetActive(true);
 
@@ -139,6 +141,7 @@ public class SimpleDialogueUI : MonoBehaviour
         if (dialogueWindow != null)
             dialogueWindow.SetActive(false);
 
+        PlayerInputLock.SetLocked(false);
         OnDialogueFinished?.Invoke();
     }
 }

@@ -8,9 +8,8 @@ public class MonsterData : ScriptableObject
     [TextArea(3, 10)] public string description;
     public Sprite monsterImage;
 
-    [Header("Audio")]
-    public GameSoundSet spawnSound;
-    public GameSoundSet defeatSound;
+    [Header("Defeat")]
+    public MonsterDefeatType defeatType = MonsterDefeatType.None;
 
     [Header("Background")]
     public Sprite backgroundImage;

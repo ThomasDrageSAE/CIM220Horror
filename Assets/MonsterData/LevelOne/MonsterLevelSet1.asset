@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e3beac4dc3dda42ac1e18afb59b44a, type: 3}
+  m_Name: MonsterLevelSet1
+  m_EditorClassIdentifier: 
+  levelNumber: 1
+  possibleMonsters:
+  - {fileID: 11400000, guid: c3c2a3fcc1f789b4e9d0e83dd63d0126, type: 2}
+  - {fileID: 11400000, guid: 48604a19781883d4a9b9fd759744b6e5, type: 2}
+  betweenFightDialogue:
+  - Whatever that was, it wasn't alone.
+  - '"The air shifts again."'
+  - I need to keep going...
+  isEndingLevel: 0
+  endingBackground: {fileID: 0}
+  endingDialogue: []

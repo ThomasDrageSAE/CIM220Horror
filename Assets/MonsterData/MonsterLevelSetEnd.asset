@@ -10,8 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1e3beac4dc3dda42ac1e18afb59b44a, type: 3}
-  m_Name: MonsterLevelSet2
+  m_Name: MonsterLevelSetEnd
   m_EditorClassIdentifier: 
-  levelNumber: 2
-  possibleMonsters:
-  - {fileID: 11400000, guid: 48604a19781883d4a9b9fd759744b6e5, type: 2}
+  levelNumber: 5
+  possibleMonsters: []
+  betweenFightDialogue: []
+  isEndingLevel: 1
+  endingBackground: {fileID: -3118902559471176685, guid: a2e1c4d4942838445a3830420f6a4372, type: 3}
+  endingDialogue:
+  - I made it!
+  - That was close!
+  - I think I'll stay here for a while, before I head back down.
+  - I might look for a new job......

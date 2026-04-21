@@ -10,17 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d95b766b5441cbb47b5067934fdc2eb3, type: 3}
-  m_Name: MonsterDataTest2
+  m_Name: MonsterDataPlant1
   m_EditorClassIdentifier: 
-  monsterName: Plant
+  monsterName: Plant1
   description: 
-  monsterImage: {fileID: 5853661806726728228, guid: d39af2ace3139784f8569999fdc13091, type: 3}
+  monsterImage: {fileID: 5960713649519986423, guid: 65ba9b9feb5cf7a428e1769db382e45a, type: 3}
   spawnSound: {fileID: 0}
   defeatSound: {fileID: 0}
-  backgroundImage: {fileID: 0}
+  backgroundImage: {fileID: -820463262176930726, guid: d7c818e1d7e34c341b8c4d33d4815318, type: 3}
   introDialogue:
   - Did that plant just move?
+  - Or am i just seeing things...
   fightDialogue:
-  - Test
+  - It did move!
+  - And now it wants to eat me!
   defeatDialogue:
-  - wow
+  - I wish I brought some weedkiller...
+  - I should be close now to the cabin now.

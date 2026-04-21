@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95b766b5441cbb47b5067934fdc2eb3, type: 3}
+  m_Name: MonsterDataPlant2
+  m_EditorClassIdentifier: 
+  monsterName: Plant2
+  description: 
+  monsterImage: {fileID: 6941706853065814016, guid: cac120f03edfaff46aba647ba6c2fb65, type: 3}
+  spawnSound: {fileID: 0}
+  defeatSound: {fileID: 0}
+  backgroundImage: {fileID: -820463262176930726, guid: d7c818e1d7e34c341b8c4d33d4815318, type: 3}
+  introDialogue:
+  - The plants look really different around here.
+  - Are they native to this area?
+  - Ahhh!
+  fightDialogue:
+  - I guess that answers my question.
+  - I gotta take it down somehow!
+  defeatDialogue:
+  - I should be a gardener!
+  - Actually....maybe not
+  - I should be close to the cabin now!

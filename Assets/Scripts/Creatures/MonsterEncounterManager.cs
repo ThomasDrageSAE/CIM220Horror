@@ -9,7 +9,9 @@ public class MonsterEncounterManager : MonoBehaviour
         None,
         Intro,
         Fight,
-        Defeat
+        Defeat,
+        BetweenFights,
+        Ending
     }
 
     [Header("Level Data")]
@@ -31,17 +33,28 @@ public class MonsterEncounterManager : MonoBehaviour
     private DialoguePhase currentDialoguePhase = DialoguePhase.None;
     private bool fightDialogueShown;
     private bool monsterRevealed;
+    private bool endingReached;
+    
+    [Header("Effects")]
+    [SerializeField] private ScreenShakeUI screenShake;
+    [SerializeField] private bool shakeOnFirstMonsterOnly = true;
+    [SerializeField] private MonsterIdleMotion monsterMotion;
+    
+    [Header("Gameplay")]
+    [SerializeField] private PhoneBatteryManager batteryManager;
+
+    private bool firstMonsterRevealDone;
+    public MonsterDefeatType CurrentDefeatType => currentMonster != null ? currentMonster.defeatType : MonsterDefeatType.None;
 
     public MonsterData CurrentMonster => currentMonster;
     public bool CurrentMonsterDefeated => currentMonsterDefeated;
-
-    // ✅ ADDED THIS LINE (fix for your error)
     public int CurrentLevel => currentLevel;
 
-    private void Start()
-    {
-        StartLevel(currentLevel);
-    }
+    public bool EndingReached => endingReached;
+    
+    public System.Action OnEndingStarted;
+    public System.Action OnEndingFinished;
+    
 
     public void StartLevel(int levelNumber)
     {
@@ -53,11 +66,33 @@ public class MonsterEncounterManager : MonoBehaviour
 
         MonsterLevelSet levelSet = GetLevelSet(levelNumber);
 
-        if (levelSet == null || levelSet.possibleMonsters == null || levelSet.possibleMonsters.Length == 0)
+        if (levelSet == null)
+        {
+            Debug.LogWarning("No level set found for level " + levelNumber);
+            currentMonster = null;
+            HideMonsterUI();
+
+            if (backgroundManager != null)
+                backgroundManager.SetBlack();
+
+            return;
+        }
+
+        if (levelSet.isEndingLevel)
+        {
+            StartEnding(levelSet);
+            return;
+        }
+
+        if (levelSet.possibleMonsters == null || levelSet.possibleMonsters.Length == 0)
         {
             Debug.LogWarning("No valid monster level set found for level " + levelNumber);
             currentMonster = null;
-            RefreshUI();
+            HideMonsterUI();
+
+            if (backgroundManager != null)
+                backgroundManager.SetBlack();
+
             return;
         }
 
@@ -70,7 +105,7 @@ public class MonsterEncounterManager : MonoBehaviour
 
     public void MarkCurrentMonsterDefeated()
     {
-        if (currentMonster == null || currentMonsterDefeated)
+        if (currentMonster == null || currentMonsterDefeated || endingReached)
             return;
 
         currentMonsterDefeated = true;
@@ -82,11 +117,14 @@ public class MonsterEncounterManager : MonoBehaviour
 
     public void ShowFightDialogue()
     {
-        if (currentMonster == null || dialogueManager == null || fightDialogueShown)
+        if (currentMonster == null || dialogueManager == null || fightDialogueShown || endingReached)
             return;
 
         if (currentMonster.fightDialogue == null || currentMonster.fightDialogue.Length == 0)
+        {
+            currentDialoguePhase = DialoguePhase.None;
             return;
+        }
 
         currentDialoguePhase = DialoguePhase.Fight;
         fightDialogueShown = true;
@@ -95,22 +133,48 @@ public class MonsterEncounterManager : MonoBehaviour
 
     public void OnDialogueSequenceFinished()
     {
-        if (currentMonster == null)
-            return;
-
-        if (currentDialoguePhase == DialoguePhase.Intro)
+        if (endingReached)
         {
-            RevealMonsterUI();
-            ShowFightDialogue();
+            if (currentDialoguePhase == DialoguePhase.Ending)
+            {
+                currentDialoguePhase = DialoguePhase.None;
+                OnEndingFinished?.Invoke();
+            }
+
             return;
         }
 
-        currentDialoguePhase = DialoguePhase.None;
+        if (currentMonster == null && currentDialoguePhase != DialoguePhase.BetweenFights)
+            return;
+
+        switch (currentDialoguePhase)
+        {
+            case DialoguePhase.Intro:
+                RevealMonsterUI();
+                ShowFightDialogue();
+                break;
+
+            case DialoguePhase.Fight:
+                currentDialoguePhase = DialoguePhase.None;
+                break;
+
+            case DialoguePhase.Defeat:
+                StartBetweenFightTransition();
+                break;
+
+            case DialoguePhase.BetweenFights:
+                GoToNextLevel();
+                break;
+
+            default:
+                currentDialoguePhase = DialoguePhase.None;
+                break;
+        }
     }
 
     public void ShowInteractionDialogue(string[] lines)
     {
-        if (dialogueManager == null || lines == null || lines.Length == 0)
+        if (dialogueManager == null || lines == null || lines.Length == 0 || endingReached)
             return;
 
         dialogueManager.ShowLines(lines);
@@ -118,6 +182,65 @@ public class MonsterEncounterManager : MonoBehaviour
 
     public void NextLevel()
     {
+        StartLevel(currentLevel + 1);
+    }
+
+    private void StartEnding(MonsterLevelSet endingLevel)
+    {
+        endingReached = true;
+        currentMonster = null;
+        HideMonsterUI();
+
+        OnEndingStarted?.Invoke();
+
+        if (backgroundManager != null)
+        {
+            if (endingLevel.endingBackground != null)
+                backgroundManager.SetBackground(endingLevel.endingBackground);
+            else
+                backgroundManager.SetBlack();
+        }
+
+        if (dialogueManager != null &&
+            endingLevel.endingDialogue != null &&
+            endingLevel.endingDialogue.Length > 0)
+        {
+            currentDialoguePhase = DialoguePhase.Ending;
+            dialogueManager.ShowLines(endingLevel.endingDialogue);
+        }
+        else
+        {
+            currentDialoguePhase = DialoguePhase.None;
+            OnEndingFinished?.Invoke();
+        }
+    }
+
+    private void StartBetweenFightTransition()
+    {
+        HideMonsterUI();
+
+        if (backgroundManager != null)
+            backgroundManager.SetBlack();
+
+        MonsterLevelSet levelSet = GetLevelSet(currentLevel);
+
+        if (levelSet != null &&
+            levelSet.betweenFightDialogue != null &&
+            levelSet.betweenFightDialogue.Length > 0 &&
+            dialogueManager != null)
+        {
+            currentDialoguePhase = DialoguePhase.BetweenFights;
+            dialogueManager.ShowLines(levelSet.betweenFightDialogue);
+        }
+        else
+        {
+            GoToNextLevel();
+        }
+    }
+
+    private void GoToNextLevel()
+    {
+        currentDialoguePhase = DialoguePhase.None;
         StartLevel(currentLevel + 1);
     }
 
@@ -155,11 +278,12 @@ public class MonsterEncounterManager : MonoBehaviour
             {
                 monsterImageDisplay.sprite = null;
                 monsterImageDisplay.color = new Color(1f, 1f, 1f, 0f);
+                monsterImageDisplay.enabled = false;
             }
         }
 
         if (monsterNameText != null)
-            monsterNameText.text = currentMonster != null ? currentMonster.monsterName : "No Monster";
+            monsterNameText.text = currentMonster != null ? currentMonster.monsterName : "";
 
         if (backgroundManager != null)
             backgroundManager.SetBackground(currentMonster != null ? currentMonster.backgroundImage : null);
@@ -169,10 +293,29 @@ public class MonsterEncounterManager : MonoBehaviour
     {
         monsterRevealed = true;
         RefreshUI();
+
+        // 🔥 Enable glitch ONLY on last monster (level 4)
+        if (monsterMotion != null)
+        {
+            bool isFinalMonster = currentLevel == 4;
+            monsterMotion.SetGlitch(isFinalMonster);
+        }
+
+        // Screen shake still works
+        if (screenShake != null)
+        {
+            if (!shakeOnFirstMonsterOnly || !firstMonsterRevealDone)
+            {
+                screenShake.Shake();
+                firstMonsterRevealDone = true;
+            }
+        }
     }
 
     private void HideMonsterUI()
     {
+        monsterRevealed = false;
+
         if (monsterImageDisplay != null)
         {
             monsterImageDisplay.sprite = null;
@@ -206,8 +349,35 @@ public class MonsterEncounterManager : MonoBehaviour
             return;
 
         if (currentMonster.defeatDialogue == null || currentMonster.defeatDialogue.Length == 0)
+        {
+            StartBetweenFightTransition();
             return;
+        }
 
         dialogueManager.ShowLines(currentMonster.defeatDialogue);
+    }
+    public bool TryDefeatMonster(MonsterDefeatType attemptedType)
+    {
+        if (currentMonster == null)
+            return false;
+
+        if (currentMonsterDefeated)
+            return false;
+
+        if (!monsterRevealed)
+            return false;
+
+        bool correct = currentMonster.defeatType == attemptedType;
+
+        if (correct)
+        {
+            MarkCurrentMonsterDefeated();
+            return true;
+        }
+
+        if (batteryManager != null)
+            batteryManager.DrainWrongChoice();
+
+        return false;
     }
 }

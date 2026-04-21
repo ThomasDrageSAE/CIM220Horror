@@ -13,12 +13,21 @@ public class MonsterBackgroundManager : MonoBehaviour
         if (newBackground == null)
         {
             backgroundImageDisplay.sprite = null;
-            backgroundImageDisplay.color = new Color(1f, 1f, 1f, 0f);
+            backgroundImageDisplay.color = Color.black;
             return;
         }
 
         backgroundImageDisplay.sprite = newBackground;
         backgroundImageDisplay.color = Color.white;
         backgroundImageDisplay.preserveAspect = true;
+    }
+
+    public void SetBlack()
+    {
+        if (backgroundImageDisplay == null)
+            return;
+
+        backgroundImageDisplay.sprite = null;
+        backgroundImageDisplay.color = Color.black;
     }
 }

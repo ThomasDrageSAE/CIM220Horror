@@ -38,6 +38,9 @@ public class PhoneTogglePosition : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerInputLock.IsLocked)
+            return;
+        
         if (Input.GetKeyDown(toggleKey))
         {
             TogglePhone();
