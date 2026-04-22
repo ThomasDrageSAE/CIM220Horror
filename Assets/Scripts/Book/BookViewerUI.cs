@@ -10,6 +10,7 @@ public class BookViewerUI : MonoBehaviour
     [SerializeField] private Button prevButton;
     [SerializeField] private Button nextButton;
     [SerializeField] private Button closeButton;
+    [SerializeField] private BookPageTurnOverlay pageTurnOverlay;
 
     private BookData currentBook;
     private int currentSpreadIndex;
@@ -59,9 +60,31 @@ public class BookViewerUI : MonoBehaviour
 
     public void NextSpread()
     {
-        if (currentBook == null) return;
+        if (currentBook == null)
+            return;
 
-        if (currentSpreadIndex < currentBook.spreads.Length - 1)
+        if (currentSpreadIndex >= currentBook.spreads.Length - 1)
+            return;
+
+        if (pageTurnOverlay != null && !pageTurnOverlay.IsPlaying)
+        {
+            if (spreadParent != null)
+                spreadParent.gameObject.SetActive(false);
+
+            pageTurnOverlay.PlayForward(
+                () =>
+                {
+                    currentSpreadIndex++;
+                    RefreshUI();
+                },
+                () =>
+                {
+                    if (spreadParent != null)
+                        spreadParent.gameObject.SetActive(true);
+                }
+            );
+        }
+        else if (pageTurnOverlay == null)
         {
             currentSpreadIndex++;
             RefreshUI();
@@ -70,9 +93,31 @@ public class BookViewerUI : MonoBehaviour
 
     public void PreviousSpread()
     {
-        if (currentBook == null) return;
+        if (currentBook == null)
+            return;
 
-        if (currentSpreadIndex > 0)
+        if (currentSpreadIndex <= 0)
+            return;
+
+        if (pageTurnOverlay != null && !pageTurnOverlay.IsPlaying)
+        {
+            if (spreadParent != null)
+                spreadParent.gameObject.SetActive(false);
+
+            pageTurnOverlay.PlayBackward(
+                () =>
+                {
+                    currentSpreadIndex--;
+                    RefreshUI();
+                },
+                () =>
+                {
+                    if (spreadParent != null)
+                        spreadParent.gameObject.SetActive(true);
+                }
+            );
+        }
+        else if (pageTurnOverlay == null)
         {
             currentSpreadIndex--;
             RefreshUI();
