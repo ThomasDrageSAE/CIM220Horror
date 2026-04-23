@@ -18,4 +18,13 @@ public class MonsterData : ScriptableObject
     [TextArea(2, 6)] public string[] introDialogue;
     [TextArea(2, 6)] public string[] fightDialogue;
     [TextArea(2, 6)] public string[] defeatDialogue;
+
+    [Header("Display Settings")]
+    public bool useCustomImageSize = false;
+    public Vector2 customImageSize = new Vector2(500f, 500f);
+    public Vector2 imagePositionOffset = Vector2.zero;
+    public bool preserveAspect = true;
+    
+    public MonsterIdleMotion.MotionStyle motionStyle = MonsterIdleMotion.MotionStyle.Float;
+    public bool useGlitchMotion = false;
 }

@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1e3beac4dc3dda42ac1e18afb59b44a, type: 3}
-  m_Name: MonsterLevelSet4
+  m_Name: MonsterLevelSet3
   m_EditorClassIdentifier: 
-  levelNumber: 4
-  possibleMonsters: []
-  betweenFightDialogue: []
+  levelNumber: 3
+  possibleMonsters:
+  - {fileID: 11400000, guid: 66bd72119bfa0e446a0c4cdc624a887f, type: 2}
+  betweenFightDialogue:
+  - I'll never see deer's the same again...
+  - I should be halfway there by now.
   isEndingLevel: 0
   endingBackground: {fileID: 0}
   endingDialogue: []

@@ -15,8 +15,7 @@ MonoBehaviour:
   monsterName: Plant1
   description: 
   monsterImage: {fileID: 5960713649519986423, guid: 65ba9b9feb5cf7a428e1769db382e45a, type: 3}
-  spawnSound: {fileID: 0}
-  defeatSound: {fileID: 0}
+  defeatType: 0
   backgroundImage: {fileID: -820463262176930726, guid: d7c818e1d7e34c341b8c4d33d4815318, type: 3}
   introDialogue:
   - Did that plant just move?
@@ -27,3 +26,9 @@ MonoBehaviour:
   defeatDialogue:
   - I wish I brought some weedkiller...
   - I should be close now to the cabin now.
+  useCustomImageSize: 0
+  customImageSize: {x: 500, y: 500}
+  imagePositionOffset: {x: 0, y: 0}
+  preserveAspect: 1
+  motionStyle: 1
+  useGlitchMotion: 0

@@ -15,8 +15,7 @@ MonoBehaviour:
   monsterName: Plant2
   description: 
   monsterImage: {fileID: 6941706853065814016, guid: cac120f03edfaff46aba647ba6c2fb65, type: 3}
-  spawnSound: {fileID: 0}
-  defeatSound: {fileID: 0}
+  defeatType: 0
   backgroundImage: {fileID: -820463262176930726, guid: d7c818e1d7e34c341b8c4d33d4815318, type: 3}
   introDialogue:
   - The plants look really different around here.
@@ -29,3 +28,9 @@ MonoBehaviour:
   - I should be a gardener!
   - Actually....maybe not
   - I should be close to the cabin now!
+  useCustomImageSize: 0
+  customImageSize: {x: 500, y: 500}
+  imagePositionOffset: {x: 0, y: 0}
+  preserveAspect: 1
+  motionStyle: 1
+  useGlitchMotion: 0

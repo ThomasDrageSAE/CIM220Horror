@@ -6,23 +6,50 @@
   <component name="ChangeListManager">
     <list default="true" id="6abaa505-eda4-4a5f-b2df-1c03f025984f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CIM220Horror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CIM220Horror/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterDataTest.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterDataTest.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterDataTest2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterDataTest2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterLevelSet1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterLevelSet1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterLevelSet2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterLevelSet2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelFour.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelFour/MonsterDataTImeGuy.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelFour/MonsterDataTImeGuy.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelFour/MonsterLevelSet4.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelFour/MonsterLevelSet4.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne/MonsterDataGhost1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne/MonsterDataGhost1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne/MonsterDataGhost2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne/MonsterDataGhost2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne/MonsterDataGhost3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne/MonsterDataGhost3.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne/MonsterLevelSet1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelOne/MonsterLevelSet1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelTwo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelTwo/MonsterDataPlant1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelTwo/MonsterDataPlant1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelTwo/MonsterDataPlant2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelTwo/MonsterDataPlant2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelTwo/MonsterLevelSet2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/LevelTwo/MonsterLevelSet2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pxiel Art UI borders.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pxiel Art UI borders.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterEncounterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterEncounterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterLevelSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterLevelSet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MonsterBackgroundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MonsterBackgroundManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Phone/PhoneAppButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Phone/PhoneAppButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SimpleDialogueUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SimpleDialogueUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PhoneTogglePosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PhoneTogglePosition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterIdleMotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterIdleMotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/concept stuff11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/concept stuff11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/concept stuff3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/concept stuff3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/icons8-battery-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/icons8-battery-100.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/icons8-call-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/icons8-call-100.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/icons8-camera-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/icons8-camera-100.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/icons8-flash-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/icons8-flash-100.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/log cabin interior (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/log cabin interior (1).png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/outdoors 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/outdoors 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/outdoors 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/outdoors 2.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

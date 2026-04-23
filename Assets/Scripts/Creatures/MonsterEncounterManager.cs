@@ -43,6 +43,9 @@ public class MonsterEncounterManager : MonoBehaviour
     [Header("Gameplay")]
     [SerializeField] private PhoneBatteryManager batteryManager;
 
+    [SerializeField] private RectTransform monsterImageRect;
+    [SerializeField] private Vector2 defaultImageSize = new Vector2(500f, 500f);
+    [SerializeField] private Vector2 defaultImagePosition = Vector2.zero;
     private bool firstMonsterRevealDone;
     public MonsterDefeatType CurrentDefeatType => currentMonster != null ? currentMonster.defeatType : MonsterDefeatType.None;
 
@@ -54,6 +57,8 @@ public class MonsterEncounterManager : MonoBehaviour
     
     public System.Action OnEndingStarted;
     public System.Action OnEndingFinished;
+    
+    
     
 
     public void StartLevel(int levelNumber)
@@ -281,6 +286,39 @@ public class MonsterEncounterManager : MonoBehaviour
                 monsterImageDisplay.enabled = false;
             }
         }
+        
+        if (monsterImageDisplay != null)
+        {
+            if (currentMonster != null && currentMonster.monsterImage != null)
+            {
+                monsterImageDisplay.sprite = currentMonster.monsterImage;
+                monsterImageDisplay.color = Color.white;
+                monsterImageDisplay.enabled = true;
+                monsterImageDisplay.preserveAspect = currentMonster.preserveAspect;
+
+                if (monsterImageRect != null)
+                {
+                    monsterImageRect.anchoredPosition = defaultImagePosition + currentMonster.imagePositionOffset;
+
+                    if (currentMonster.useCustomImageSize)
+                        monsterImageRect.sizeDelta = currentMonster.customImageSize;
+                    else
+                        monsterImageRect.sizeDelta = defaultImageSize;
+                }
+            }
+            else
+            {
+                monsterImageDisplay.sprite = null;
+                monsterImageDisplay.color = new Color(1f, 1f, 1f, 0f);
+                monsterImageDisplay.enabled = false;
+
+                if (monsterImageRect != null)
+                {
+                    monsterImageRect.anchoredPosition = defaultImagePosition;
+                    monsterImageRect.sizeDelta = defaultImageSize;
+                }
+            }
+        }
 
         if (monsterNameText != null)
             monsterNameText.text = currentMonster != null ? currentMonster.monsterName : "";
@@ -294,14 +332,14 @@ public class MonsterEncounterManager : MonoBehaviour
         monsterRevealed = true;
         RefreshUI();
 
-        // 🔥 Enable glitch ONLY on last monster (level 4)
-        if (monsterMotion != null)
+        // 🎯 APPLY MOTION SETTINGS PER MONSTER
+        if (monsterMotion != null && currentMonster != null)
         {
-            bool isFinalMonster = currentLevel == 4;
-            monsterMotion.SetGlitch(isFinalMonster);
+            monsterMotion.SetMotionStyle(currentMonster.motionStyle);
+            monsterMotion.SetGlitch(currentMonster.useGlitchMotion);
         }
 
-        // Screen shake still works
+        // existing screen shake (keep this if you have it)
         if (screenShake != null)
         {
             if (!shakeOnFirstMonsterOnly || !firstMonsterRevealDone)

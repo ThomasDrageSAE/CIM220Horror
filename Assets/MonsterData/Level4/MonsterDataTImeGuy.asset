@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95b766b5441cbb47b5067934fdc2eb3, type: 3}
+  m_Name: MonsterDataTImeGuy
+  m_EditorClassIdentifier: 
+  monsterName: 
+  description: 
+  monsterImage: {fileID: 21300000, guid: 36e7fdfff542a154eace6a4cc52106b6, type: 3}
+  defeatType: 0
+  backgroundImage: {fileID: 3068627696388785331, guid: 41d0a26ad9351414b8de13b36bedff86, type: 3}
+  introDialogue:
+  - Oh, there's someone else here.
+  - Hello!
+  - Hello? Can you hear me....
+  - Uh oh.....
+  fightDialogue:
+  - I got a bad feeling....
+  defeatDialogue:
+  - Is he the one responsible for all this craziness?
+  useCustomImageSize: 1
+  customImageSize: {x: 540, y: 540}
+  imagePositionOffset: {x: 0, y: 0}
+  preserveAspect: 1
+  motionStyle: 2
+  useGlitchMotion: 0
