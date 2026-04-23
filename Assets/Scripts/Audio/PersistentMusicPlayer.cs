@@ -1,6 +1,6 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Unity.Netcode;
 
 public class PersistentMusicPlayer : MonoBehaviour
 {
@@ -11,7 +11,8 @@ public class PersistentMusicPlayer : MonoBehaviour
 
     [Header("Music Clips")]
     [SerializeField] private AudioClip mainMenuMusic;
-    [SerializeField] private AudioClip gameMusic;
+    [SerializeField] private AudioClip playerOneGameMusic;
+    [SerializeField] private AudioClip playerTwoGameMusic;
 
     [Header("Fade")]
     [SerializeField] private float fadeDuration = 1f;
@@ -52,12 +53,7 @@ public class PersistentMusicPlayer : MonoBehaviour
 
     private void PlayMusicForScene(string sceneName)
     {
-        AudioClip targetClip = null;
-
-        if (sceneName == "Main")
-            targetClip = mainMenuMusic;
-        else if (sceneName == "Game")
-            targetClip = gameMusic;
+        AudioClip targetClip = GetClipForScene(sceneName);
 
         if (targetClip == null || audioSource == null)
             return;
@@ -71,7 +67,27 @@ public class PersistentMusicPlayer : MonoBehaviour
         fadeRoutine = StartCoroutine(FadeToTrack(targetClip));
     }
 
-    private IEnumerator FadeToTrack(AudioClip newClip)
+    private AudioClip GetClipForScene(string sceneName)
+    {
+        if (sceneName == "MainMenu")
+            return mainMenuMusic;
+
+        if (sceneName == "Game")
+        {
+            if (NetworkManager.Singleton == null)
+                return playerOneGameMusic;
+
+            if (NetworkManager.Singleton.IsHost)
+                return playerOneGameMusic;
+
+            if (NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsHost)
+                return playerTwoGameMusic;
+        }
+
+        return null;
+    }
+
+    private System.Collections.IEnumerator FadeToTrack(AudioClip newClip)
     {
         float startVolume = audioSource.volume;
 
@@ -101,5 +117,6 @@ public class PersistentMusicPlayer : MonoBehaviour
         }
 
         audioSource.volume = 1f;
+        fadeRoutine = null;
     }
 }
