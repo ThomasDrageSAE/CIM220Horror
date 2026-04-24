@@ -1,45 +1,54 @@
+using System.Collections;
 using UnityEngine;
-
 
 public class GhostController : MonoBehaviour
 {
     [Header("Behaviour")]
-    public float moveSpeed = 2f;
-    public bool patrolHorizontal = true;
-    public float patrolDistance = 3f;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private bool patrolHorizontal = true;
+    [SerializeField] private float patrolDistance = 3f;
+
+    [Header("Reveal")]
+    [SerializeField] private float revealDuration = 0.5f;
 
     [Header("On Capture")]
-    [Tooltip("What happens when this ghost is successfully photographed.")]
-    public GhostCaptureResponse captureResponse = GhostCaptureResponse.Dissolve;
+    [SerializeField] private GhostCaptureResponse captureResponse = GhostCaptureResponse.Dissolve;
 
     public enum GhostCaptureResponse
     {
-        Dissolve,   // Ghost fades out and is destroyed
-        Nothing     // Ghost ignores the photo
+        Dissolve,
+        Nothing
     }
 
     private Vector3 _startPosition;
     private float _patrolDir = 1f;
+    private SpriteRenderer _spriteRenderer;
+    private bool _revealed = false;
 
-    void Start()
+    private void Start()
     {
         _startPosition = transform.position;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Start invisible
+        SetAlpha(0f);
 
         CameraApp cam = FindObjectOfType<CameraApp>();
         if (cam != null)
             cam.OnPhotoTaken += OnPhotoTaken;
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         CameraApp cam = FindObjectOfType<CameraApp>();
         if (cam != null)
             cam.OnPhotoTaken -= OnPhotoTaken;
     }
 
-    void Update()
+    private void Update()
     {
-        if (!patrolHorizontal) return;
+        if (!patrolHorizontal)
+            return;
 
         transform.Translate(Vector3.right * _patrolDir * moveSpeed * Time.deltaTime);
 
@@ -50,55 +59,69 @@ public class GhostController : MonoBehaviour
 
     private void OnPhotoTaken(bool ghostCaptured, GameObject ghost)
     {
-        if (!ghostCaptured || ghost != gameObject) return;
+        if (!ghostCaptured || ghost != gameObject)
+            return;
 
         switch (captureResponse)
         {
             case GhostCaptureResponse.Dissolve:
-                StartCoroutine(DissolveAndDestroy());
+                if (!_revealed)
+                    StartCoroutine(RevealThenDissolve());
+                else
+                    StartCoroutine(DissolveAndDestroy());
                 break;
             case GhostCaptureResponse.Nothing:
-                Debug.Log($"[GhostController] {name} ignored the camera.");
+                if (!_revealed)
+                    StartCoroutine(Reveal());
+                Debug.Log("[GhostController] " + name + " ignored the camera.");
                 break;
         }
     }
 
-    private System.Collections.IEnumerator DissolveAndDestroy()
+    private IEnumerator Reveal()
     {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        _revealed = true;
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime / revealDuration;
+            SetAlpha(Mathf.Lerp(0f, 1f, t));
+            yield return null;
+        }
+
+        SetAlpha(1f);
+    }
+
+    private IEnumerator RevealThenDissolve()
+    {
+        yield return StartCoroutine(Reveal());
+        yield return StartCoroutine(DissolveAndDestroy());
+    }
+
+    private IEnumerator DissolveAndDestroy()
+    {
+        _revealed = false;
         float t = 0f;
         float duration = 0.8f;
-        Color start = sr != null ? sr.color : Color.white;
 
-        while (t < duration)
+        while (t < 1f)
         {
-            t += Time.deltaTime;
-            if (sr != null)
-            {
-                Color c = start;
-                c.a = Mathf.Lerp(1f, 0f, t / duration);
-                sr.color = c;
-            }
+            t += Time.deltaTime / duration;
+            SetAlpha(Mathf.Lerp(1f, 0f, t));
             yield return null;
         }
 
         Destroy(gameObject);
     }
 
-    private System.Collections.IEnumerator Flee()
+    private void SetAlpha(float alpha)
     {
-        float timer = 0f;
-        float fleeTime = 2f;
-        Vector3 fleeDir = (transform.position - Camera.main.transform.position).normalized;
-        fleeDir.z = 0f;
+        if (_spriteRenderer == null)
+            return;
 
-        while (timer < fleeTime)
-        {
-            timer += Time.deltaTime;
-            transform.Translate(fleeDir * moveSpeed * 4f * Time.deltaTime);
-            yield return null;
-        }
-
-        Destroy(gameObject);
+        Color c = _spriteRenderer.color;
+        c.a = alpha;
+        _spriteRenderer.color = c;
     }
 }
