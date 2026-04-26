@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd20df6c9479f3d449851f4ca53de79e, type: 3}
+  m_Name: BeastsBook
+  m_EditorClassIdentifier: 
+  bookTitle: 
+  spreads:
+  - layout: {fileID: 6211519498159910813, guid: cc6383de98fd6294388821de6cde789f, type: 3}
+    textA: 'The local animals have been changing over the last few years. Mainly
+      the deer, but they are not deer anymore.
+
+
+      Maybe they kept the form to
+      prey easier?
+
+
+      I will try to keep a log of these beasts in this book. '
+    textB: 
+    textC: 
+    textD: 
+    imageA: {fileID: 865804816067458902, guid: c613b4c540c83ac4ba00ad0bee065134, type: 3}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 470820575514630869, guid: 1a4ce467c9bbd91459e6f1d16a4f9a9e, type: 3}
+    textA: Skinwalker Stag
+    textB: Some wear the skin poorly. The legs bend wrong. The head lags behind the
+      body.
+    textC: Do not look away. It cannot hold the shape forever. It relies on darkness
+      to hide, so attack it with light.
+    textD: 
+    imageA: {fileID: 8191607871805606840, guid: 7909af0775c51c643afc2a28723c90f6, type: 3}
+    imageB: {fileID: -8579180617657454444, guid: ae45ff052776b1840be37ac3d2a07621, type: 3}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 4469434606004700145, guid: b1f56c105ade1124b882fddd07899040, type: 3}
+    textA: Many-Eyed Stag
+    textB: Break the sight!
+    textC: And the body follows.
+    textD: 'There are others that do not hide. They watch....Not just from the body.
+
+
+      The
+      eyes grow where they are needed. On walls. In the dark. Behind you....
+
+
+      If
+      it cannot see you, it cannot hunt you!
+
+'
+    imageA: {fileID: -5926201026390796380, guid: 7bda3dac18202074c9e330f707aabd49, type: 3}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 818466465623097833, guid: 16114899c58a77b40a5e73196b0bc68b, type: 3}
+    textA: Many-Eyed Stag
+    textB: 
+    textC: 
+    textD: '
+
+'
+    imageA: {fileID: 8191607871805606840, guid: 7909af0775c51c643afc2a28723c90f6, type: 3}
+    imageB: {fileID: 3254737427981163177, guid: 09f0072bacf1099408db4e4f43708378, type: 3}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}

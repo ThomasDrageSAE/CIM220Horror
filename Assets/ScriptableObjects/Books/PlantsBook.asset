@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd20df6c9479f3d449851f4ca53de79e, type: 3}
+  m_Name: PlantsBook
+  m_EditorClassIdentifier: 
+  bookTitle: Plants
+  spreads:
+  - layout: {fileID: 6211519498159910813, guid: cc6383de98fd6294388821de6cde789f, type: 3}
+    textA: 'Some of the local plants have changed recently. I have tried to record
+      their changes in this journal. These are not plants. They imitate structure,
+      but not purpose.
+
+
+      Roots without soil.
+
+      Growth without light....'
+    textB: They react....not to water, not to time. To us....
+    textC: 
+    textD: 
+    imageA: {fileID: 0}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 4370654923283873279, guid: 10fb891da31975b4e95408080b14b9b9, type: 3}
+    textA: 'Some specimens recoil from sudden illumination. Not sustained light,
+      but interuption.
+
+
+      This explains why they are able to survive in the
+      daylight.'
+    textB: 'A steady beam did nothing. But brief flashes....force it to contract?
+
+      Like
+      blinking at something that shouldn''t be there.'
+    textC: 
+    textD: 
+    imageA: {fileID: 0}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 470820575514630869, guid: 8350bb0e530f4f847bc89e5a6414e355, type: 3}
+    textA: 'There seems to be pale variants that do not photosynthesize. They avoid
+      natural light entirely!
+
+
+      They seem to prefer something else...perhaps
+      the spiral patterns they have will explain?'
+    textB: 'Under the inspection light, they collapse rapidly. Not a burn, but erased..
+
+      As
+      if it exposed it for what they really are. Perhaps the UV is responsible for
+      why they avoid the daylight?'
+    textC: 
+    textD: 
+    imageA: {fileID: 0}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 6211519498159910813, guid: cc6383de98fd6294388821de6cde789f, type: 3}
+    textA: 'Do not assume they behave like plants! Watering them made them worse.
+
+
+      Fire
+      was....inconclusive.
+
+      Sometimes effective.
+
+      Sometimes it spread.'
+    textB: Havn't tried overwatering. Must try as soon as I can!
+    textC: 
+    textD: 
+    imageA: {fileID: -7845495922271660370, guid: e6ebebfbd034ea848b7eecb414a2f126, type: 3}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 3671605574920047432, guid: 714783606f1130d46add62045a7e6fbd, type: 3}
+    textA: Cutting the surface does nothing. It grows back faster than it is removed.
+      But the structure is not uniform. There are points where everything connects.
+      If I break those, the whole thing falls. It seems to only work on the ones
+      with stripes?
+    textB: 
+    textC: 
+    textD: 
+    imageA: {fileID: -131896887491537849, guid: 9ed1b74ed00a32e41906a8cbbdd50064, type: 3}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}

@@ -1,4 +1,4 @@
-Library: C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --minimum-os-version=
 --backend=burst-llvm-19
@@ -10,11 +10,11 @@ Library: C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Cim220 Horror Project_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\Burst
+--temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\Burst
 --debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Library\Burst
---output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Library\Burst
+--output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[UnityEngine.Rendering.GPUInstanceDataBuffer+ConvertCPUInstancesToGPUInstancesJob, Unity.RenderPipelines.GPUDriven.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.GPUInstanceDataBuffer+ConvertCPUInstancesToGPUInstancesJob&, Unity.RenderPipelines.GPUDriven.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--a917331aad44b603aa293fb2ddd84845
@@ -89,11 +89,11 @@ Library: C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Cim220 Horror Project_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\Burst
+--temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\Burst
 --debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Library\Burst
---output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Library\Burst
+--output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobParallelForExtensions+ParallelForJobStruct`1[[UnityEngine.Rendering.GPUInstanceDataBuffer+ConvertCPUInstancesToGPUInstancesJob, Unity.RenderPipelines.GPUDriven.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.GPUInstanceDataBuffer+ConvertCPUInstancesToGPUInstancesJob&, Unity.RenderPipelines.GPUDriven.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--a917331aad44b603aa293fb2ddd84845
@@ -170,11 +170,11 @@ Library: C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\
 --float-mode=Fast
 --linker-options=PdbAltPath="Cim220 Horror Project_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\Burst
+--temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\Burst
 --debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Library\Burst
---output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Library\Burst
+--output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ZBinningJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ZBinningJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--77fc393cb521ac129b1392d4eb94d29a
@@ -192,11 +192,11 @@ Library: C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\
 --float-mode=Fast
 --linker-options=PdbAltPath="Cim220 Horror Project_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\Burst
+--temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\Burst
 --debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Library\Burst
---output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Library\Burst
+--output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.ZBinningJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.ZBinningJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--77fc393cb521ac129b1392d4eb94d29a
@@ -212,11 +212,11 @@ Library: C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Cim220 Horror Project_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\Burst
+--temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\Burst
 --debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Library\Burst
---output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Library\Burst
+--output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=UnityEngine.Rendering.GPUResidentDrawerBurst, Unity.RenderPipelines.GPUDriven.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::ClassifyMaterials(Unity.Collections.NativeArray`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Collections.NativeParallelHashMap`2+ReadOnly[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.Rendering.BatchMaterialID, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Collections.NativeList`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&, Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Collections.NativeList`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&, Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Collections.NativeList`1[[UnityEngine.Rendering.GPUDrivenPackedMaterialData, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null)--f259e9421b556600f769263137cdc7bc
@@ -330,11 +330,11 @@ Library: C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\
 --target-framework=NetFramework
 --linker-options=PdbAltPath="Cim220 Horror Project_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\Burst
+--temp-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\Burst
 --debug=Full
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.0.60f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Library\Burst
---output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Library\Burst
+--output=C:\Users\Thomas\Documents\SAE\Trimester 4\CIM220\Cim220 Horror Project\CIM220Horror\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=UnityEngine.Rendering.GPUResidentDrawerBurst, Unity.RenderPipelines.GPUDriven.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::ClassifyMaterials(Unity.Collections.NativeArray`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Collections.NativeParallelHashMap`2+ReadOnly[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEngine.Rendering.BatchMaterialID, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Collections.NativeList`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&, Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Collections.NativeList`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&, Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Collections.NativeList`1[[UnityEngine.Rendering.GPUDrivenPackedMaterialData, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]&, Unity.Collections, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null)--f259e9421b556600f769263137cdc7bc
