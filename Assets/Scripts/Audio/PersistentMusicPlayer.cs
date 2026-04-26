@@ -69,10 +69,10 @@ public class PersistentMusicPlayer : MonoBehaviour
 
     private AudioClip GetClipForScene(string sceneName)
     {
-        if (sceneName == "MainMenu")
+        if (sceneName == "Main")
             return mainMenuMusic;
 
-        if (sceneName == "Game")
+        if (sceneName == "Game1")
         {
             if (NetworkManager.Singleton == null)
                 return playerOneGameMusic;

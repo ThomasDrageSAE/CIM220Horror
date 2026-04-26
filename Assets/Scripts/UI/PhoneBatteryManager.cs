@@ -4,16 +4,17 @@ using UnityEngine.UI;
 
 public class PhoneBatteryManager : MonoBehaviour
 {
+    [Header("Battery")]
     [SerializeField] private int maxBattery = 100;
     [SerializeField] private int currentBattery = 100;
     [SerializeField] private int wrongChoicePenalty = 10;
 
-    [Header("Optional UI")]
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI batteryText;
     [SerializeField] private Image batteryFillImage;
 
     public int CurrentBattery => currentBattery;
-    public int MaxBattery => maxBattery;
+    public bool IsEmpty => currentBattery <= 0;
 
     private void Start()
     {
@@ -30,6 +31,11 @@ public class PhoneBatteryManager : MonoBehaviour
     {
         currentBattery = Mathf.Clamp(currentBattery - Mathf.Abs(amount), 0, maxBattery);
         RefreshUI();
+
+        if (currentBattery <= 0)
+        {
+            Debug.Log("Battery empty.");
+        }
     }
 
     public void RechargeBattery(int amount)

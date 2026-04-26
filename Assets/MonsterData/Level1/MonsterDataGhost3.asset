@@ -15,9 +15,18 @@ MonoBehaviour:
   monsterName: Ghost3
   description: 
   monsterImage: {fileID: 315349795352424782, guid: 03ee4533724c3bf4e93c744f02071f86, type: 3}
-  spawnSound: {fileID: 0}
-  defeatSound: {fileID: 0}
+  defeatType: 0
   backgroundImage: {fileID: 6480572467985121676, guid: 61ad412ba236a434aa73f7414dada648, type: 3}
-  introDialogue: []
-  fightDialogue: []
-  defeatDialogue: []
+  introDialogue:
+  - I can see someone ahead!
+  - Wait...are they floating?
+  fightDialogue:
+  - A Ghost?
+  defeatDialogue:
+  - 
+  useCustomImageSize: 0
+  customImageSize: {x: 500, y: 500}
+  imagePositionOffset: {x: 0, y: 0}
+  preserveAspect: 1
+  motionStyle: 0
+  useGlitchMotion: 0

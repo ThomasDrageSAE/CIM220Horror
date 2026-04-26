@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d5cf61b2759c7468ac11c24f093757, type: 3}
   m_Name: MainMenuButton
   m_EditorClassIdentifier: 
-  hoverSound: {fileID: 8300000, guid: 2bbed1c4883c12148937fc140b4f8de5, type: 3}
-  clickSound: {fileID: 8300000, guid: 039e5166205fe624d9776900852f820d, type: 3}
+  hoverSound: {fileID: 8300000, guid: 3c7d89a6ccae61e40a9bf75dc657a3c5, type: 3}
+  clickSound: {fileID: 8300000, guid: 703c028e3b1a5a649b9b55586884881d, type: 3}
   disabledSound: {fileID: 0}
   randomizePitch: 1
   minPitch: 0.98

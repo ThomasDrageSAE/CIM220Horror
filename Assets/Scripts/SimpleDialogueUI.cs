@@ -12,6 +12,13 @@ public class SimpleDialogueUI : MonoBehaviour
     [Header("Typewriter")]
     [SerializeField] private float characterDelay = 0.03f;
 
+    [Header("Dialogue Entry Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] dialogueEntrySounds;
+    [SerializeField] private bool randomizePitch = true;
+    [SerializeField] private float minPitch = 0.95f;
+    [SerializeField] private float maxPitch = 1.05f;
+
     public Action OnDialogueFinished;
 
     private string[] currentLines;
@@ -70,6 +77,8 @@ public class SimpleDialogueUI : MonoBehaviour
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
+        PlayDialogueEntrySound();
+
         typingCoroutine = StartCoroutine(TypeLine(currentLines[currentIndex]));
     }
 
@@ -90,6 +99,24 @@ public class SimpleDialogueUI : MonoBehaviour
 
         isTyping = false;
         typingCoroutine = null;
+    }
+
+    private void PlayDialogueEntrySound()
+    {
+        if (audioSource == null)
+            return;
+
+        if (dialogueEntrySounds == null || dialogueEntrySounds.Length == 0)
+            return;
+
+        AudioClip clip = dialogueEntrySounds[UnityEngine.Random.Range(0, dialogueEntrySounds.Length)];
+
+        if (clip == null)
+            return;
+
+        audioSource.pitch = randomizePitch ? UnityEngine.Random.Range(minPitch, maxPitch) : 1f;
+        audioSource.PlayOneShot(clip);
+        audioSource.pitch = 1f;
     }
 
     private void FinishCurrentLineInstantly()

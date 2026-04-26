@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class PhoneController : MonoBehaviour
 {
-    public enum PhoneApp { None, Camera }
+    public enum PhoneApp { None, Camera, UV }
 
     [Header("App References")]
     public CameraApp cameraApp;
+    public UVApp uvApp;
 
     [Header("UI References")]
     public GameObject homeScreenRoot;
@@ -13,6 +14,7 @@ public class PhoneController : MonoBehaviour
     private PhoneApp _activeApp = PhoneApp.None;
 
     public static PhoneController Instance { get; private set; }
+    
 
     private void Awake()
     {
@@ -33,6 +35,8 @@ public class PhoneController : MonoBehaviour
 
     public void OpenApp(PhoneApp app)
     {
+        Debug.Log("Opening app: " + app);
+
         _activeApp = app;
 
         if (homeScreenRoot != null)
@@ -41,8 +45,19 @@ public class PhoneController : MonoBehaviour
         switch (app)
         {
             case PhoneApp.Camera:
+                Debug.Log("Activating Camera app");
                 if (cameraApp != null)
                     cameraApp.Activate();
+                else
+                    Debug.LogWarning("CameraApp is not assigned.");
+                break;
+
+            case PhoneApp.UV:
+                Debug.Log("Activating UV app");
+                if (uvApp != null)
+                    uvApp.Activate();
+                else
+                    Debug.LogWarning("UVApp is not assigned.");
                 break;
         }
     }
@@ -54,6 +69,11 @@ public class PhoneController : MonoBehaviour
             case PhoneApp.Camera:
                 if (cameraApp != null)
                     cameraApp.Deactivate();
+                break;
+
+            case PhoneApp.UV:
+                if (uvApp != null)
+                    uvApp.Deactivate();
                 break;
         }
 

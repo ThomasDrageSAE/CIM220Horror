@@ -22,6 +22,13 @@ public class PhoneTogglePosition : MonoBehaviour
     [Header("Polish")]
     [SerializeField] private float overshootAmount = 1.1f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip openSound;
+    [SerializeField] private AudioClip closeSound;
+    [SerializeField] private bool randomizePitch = true;
+    [SerializeField] private float minPitch = 0.95f;
+    [SerializeField] private float maxPitch = 1.05f;
     private bool isVisible = false;
     private Coroutine moveRoutine;
 
@@ -30,9 +37,7 @@ public class PhoneTogglePosition : MonoBehaviour
         if (phoneRect == null)
             phoneRect = transform as RectTransform;
 
-        // Start hidden
         phoneRect.anchoredPosition = hiddenPosition;
-
         UpdatePrompt();
     }
 
@@ -40,7 +45,7 @@ public class PhoneTogglePosition : MonoBehaviour
     {
         if (PlayerInputLock.IsLocked)
             return;
-        
+
         if (Input.GetKeyDown(toggleKey))
         {
             TogglePhone();
@@ -50,6 +55,8 @@ public class PhoneTogglePosition : MonoBehaviour
     public void TogglePhone()
     {
         isVisible = !isVisible;
+
+        PlayToggleSound(isVisible);
 
         if (moveRoutine != null)
             StopCoroutine(moveRoutine);
@@ -65,7 +72,6 @@ public class PhoneTogglePosition : MonoBehaviour
         Vector2 start = phoneRect.anchoredPosition;
         float t = 0f;
 
-        // Overshoot for snappy feel
         Vector2 overshootTarget = Vector2.Lerp(start, target, overshootAmount);
 
         while (t < 1f)
@@ -75,7 +81,6 @@ public class PhoneTogglePosition : MonoBehaviour
             yield return null;
         }
 
-        // Snap back to final position
         float snapT = 0f;
         Vector2 current = phoneRect.anchoredPosition;
 
@@ -87,6 +92,21 @@ public class PhoneTogglePosition : MonoBehaviour
         }
 
         phoneRect.anchoredPosition = target;
+    }
+
+    private void PlayToggleSound(bool opening)
+    {
+        if (audioSource == null)
+            return;
+
+        AudioClip clip = opening ? openSound : closeSound;
+
+        if (clip == null)
+            return;
+
+        audioSource.pitch = randomizePitch ? Random.Range(minPitch, maxPitch) : 1f;
+        audioSource.PlayOneShot(clip);
+        audioSource.pitch = 1f;
     }
 
     private void UpdatePrompt()

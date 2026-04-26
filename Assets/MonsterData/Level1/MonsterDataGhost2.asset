@@ -15,8 +15,7 @@ MonoBehaviour:
   monsterName: Ghost2
   description: 
   monsterImage: {fileID: -7690393027686545325, guid: a029f3d03b8588e44a91ebbd724b1875, type: 3}
-  spawnSound: {fileID: 0}
-  defeatSound: {fileID: 0}
+  defeatType: 2
   backgroundImage: {fileID: 6480572467985121676, guid: 61ad412ba236a434aa73f7414dada648, type: 3}
   introDialogue:
   - Why do I hear galloping?
@@ -24,3 +23,9 @@ MonoBehaviour:
   - Is that a horse?
   defeatDialogue:
   - Wow....
+  useCustomImageSize: 0
+  customImageSize: {x: 500, y: 500}
+  imagePositionOffset: {x: 0, y: 0}
+  preserveAspect: 1
+  motionStyle: 0
+  useGlitchMotion: 0

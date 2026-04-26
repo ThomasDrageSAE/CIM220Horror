@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class CameraApp : MonoBehaviour
 {
     [Header("Phone Movement")]
-    [SerializeField] private RectTransform phoneRectTransform;
+    [SerializeField] private RectTransform phoneRectTransform; // Assign PhoneRoot here
     [SerializeField] private Canvas parentCanvas;
 
     [Header("Return Settings")]
@@ -18,10 +18,6 @@ public class CameraApp : MonoBehaviour
     [Header("Viewfinder")]
     [SerializeField] private Collider2D viewfinderCollider;
 
-    [Header("Ghost Detection")]
-    [SerializeField] private LayerMask ghostLayerMask;
-    [SerializeField] private string ghostTag = "Ghost";
-
     [Header("Photo Flash")]
     [SerializeField] private Image flashOverlay;
     [SerializeField] private float flashDuration = 0.25f;
@@ -29,24 +25,27 @@ public class CameraApp : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip shutterSound;
-    [SerializeField] private AudioClip ghostCapturedSound;
 
-    public System.Action<bool, GameObject> OnPhotoTaken;
+    [Header("Monster Defeat")]
+    [SerializeField] private MonsterEncounterManager encounterManager;
 
     private bool _active;
     private Vector2 _startPosition;
     private Coroutine _returnRoutine;
+    public System.Action<bool, GameObject> OnPhotoTaken;
 
     private void Awake()
     {
         if (phoneRectTransform == null)
-            phoneRectTransform = transform as RectTransform;
+        {
+            Debug.LogWarning("[CameraApp] phoneRectTransform is not assigned. Drag PhoneRoot into this field.");
+            return;
+        }
 
         if (parentCanvas == null)
-            parentCanvas = GetComponentInParent<Canvas>();
+            parentCanvas = phoneRectTransform.GetComponentInParent<Canvas>();
 
         _startPosition = phoneRectTransform.anchoredPosition;
-
         SetVisuals(false);
     }
 
@@ -61,9 +60,6 @@ public class CameraApp : MonoBehaviour
 
     public void Activate()
     {
-        if (PlayerInputLock.IsLocked)
-            return;
-
         _active = true;
         SetVisuals(true);
 
@@ -127,40 +123,39 @@ public class CameraApp : MonoBehaviour
     private void TakePhoto()
     {
         PlaySound(shutterSound);
-
-        GameObject capturedGhost = FindGhostInViewfinder();
-        bool ghostCaptured = capturedGhost != null;
-
-        if (ghostCaptured)
-        {
-            PlaySound(ghostCapturedSound);
-            Debug.Log("[CameraApp] Ghost captured: " + capturedGhost.name);
-        }
-        else
-        {
-            Debug.Log("[CameraApp] Photo taken — no ghost detected.");
-        }
-
-        OnPhotoTaken?.Invoke(ghostCaptured, capturedGhost);
-
         StartCoroutine(FlashRoutine());
+        StartCoroutine(PhotoSequenceRoutine());
     }
 
-    private GameObject FindGhostInViewfinder()
+    private IEnumerator PhotoSequenceRoutine()
     {
-        if (viewfinderCollider == null)
-            return null;
-
-        Bounds b = viewfinderCollider.bounds;
-        Collider2D[] hits = Physics2D.OverlapBoxAll(b.center, b.size, 0f, ghostLayerMask);
-
-        for (int i = 0; i < hits.Length; i++)
+        if (encounterManager == null)
         {
-            if (hits[i].CompareTag(ghostTag))
-                return hits[i].gameObject;
+            Debug.LogWarning("[CameraApp] No MonsterEncounterManager assigned.");
+            yield break;
         }
 
-        return null;
+        if (encounterManager.CurrentMonster == null)
+        {
+            Debug.LogWarning("[CameraApp] No current monster.");
+            yield break;
+        }
+
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(0.12f);
+        Time.timeScale = 1f;
+
+        bool defeated = encounterManager.TryDefeatMonster(MonsterDefeatType.Camera);
+
+        Debug.Log(defeated
+            ? "[CameraApp] Monster defeated with camera."
+            : "[CameraApp] Wrong method. Battery drained.");
+
+        OnPhotoTaken?.Invoke(defeated, null);
+        yield return new WaitForSeconds(0.2f);
+
+        if (PhoneController.Instance != null)
+            PhoneController.Instance.CloseCurrentApp();
     }
 
     private IEnumerator FlashRoutine()
@@ -173,7 +168,7 @@ public class CameraApp : MonoBehaviour
 
         while (t < half)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             SetFlashAlpha(Mathf.Lerp(0f, 1f, t / half));
             yield return null;
         }
@@ -182,7 +177,7 @@ public class CameraApp : MonoBehaviour
 
         while (t < half)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
             SetFlashAlpha(Mathf.Lerp(1f, 0f, t / half));
             yield return null;
         }
@@ -202,6 +197,9 @@ public class CameraApp : MonoBehaviour
 
     private IEnumerator ReturnToStart()
     {
+        if (phoneRectTransform == null)
+            yield break;
+
         Vector2 current = phoneRectTransform.anchoredPosition;
         float t = 0f;
 

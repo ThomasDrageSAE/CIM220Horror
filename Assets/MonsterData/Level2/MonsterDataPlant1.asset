@@ -15,7 +15,7 @@ MonoBehaviour:
   monsterName: Plant1
   description: 
   monsterImage: {fileID: 5960713649519986423, guid: 65ba9b9feb5cf7a428e1769db382e45a, type: 3}
-  defeatType: 0
+  defeatType: 4
   backgroundImage: {fileID: -820463262176930726, guid: d7c818e1d7e34c341b8c4d33d4815318, type: 3}
   introDialogue:
   - Did that plant just move?
@@ -30,5 +30,5 @@ MonoBehaviour:
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 1
-  motionStyle: 1
+  motionStyle: 3
   useGlitchMotion: 0
