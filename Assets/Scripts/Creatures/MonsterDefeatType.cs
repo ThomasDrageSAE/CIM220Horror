@@ -7,5 +7,7 @@ public enum MonsterDefeatType
     WeakPoints = 4,
     Silence = 5,
     Focus = 6,
-    DestroyEyes = 7
+    DestroyEyes = 7,
+    SyncTime
+    
 }

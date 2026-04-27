@@ -26,42 +26,43 @@ MonoBehaviour:
     textB: They react....not to water, not to time. To us....
     textC: 
     textD: 
-    imageA: {fileID: 0}
-    imageB: {fileID: 0}
+    imageA: {fileID: -8782625415207700165, guid: a6bf0ec97b5fbac49aa2cb19938f0341, type: 3}
+    imageB: {fileID: 5196001237837151643, guid: 8f14be6d6ec0ca44198dbd2a3f825295, type: 3}
     imageC: {fileID: 0}
     imageD: {fileID: 0}
-  - layout: {fileID: 4370654923283873279, guid: 10fb891da31975b4e95408080b14b9b9, type: 3}
-    textA: 'Some specimens recoil from sudden illumination. Not sustained light,
+  - layout: {fileID: 4370654923283873279, guid: 23277499e8242d7408e073be2ad16ba4, type: 3}
+    textA: Flower Plant
+    textB: 'Some specimens recoil from sudden illumination. Not sustained light,
       but interuption.
 
 
       This explains why they are able to survive in the
       daylight.'
-    textB: 'A steady beam did nothing. But brief flashes....force it to contract?
+    textC: 'A steady beam did nothing. But brief flashes....force it to contract?
 
       Like
-      blinking at something that shouldn''t be there.'
-    textC: 
-    textD: 
-    imageA: {fileID: 0}
+      blinking at something that shouldn''t be there. It seemed to shrink when I
+      my light shined over it, after three times it died.'
+    textD: It didn't work on all the new plants though...only the large flower looking
+      one.
+    imageA: {fileID: 6941706853065814016, guid: cac120f03edfaff46aba647ba6c2fb65, type: 3}
     imageB: {fileID: 0}
     imageC: {fileID: 0}
     imageD: {fileID: 0}
-  - layout: {fileID: 470820575514630869, guid: 8350bb0e530f4f847bc89e5a6414e355, type: 3}
-    textA: 'There seems to be pale variants that do not photosynthesize. They avoid
-      natural light entirely!
+  - layout: {fileID: 4469434606004700145, guid: e5c24f74ef90d13428ffc21800898f8c, type: 3}
+    textA: Flytrap
+    textB: Do not get close!
+    textC: 'There seems to be pale variants that do not photosynthesize. The look
+      like venus flytraps but larger, they avoid natural light entirely!
 
-
-      They seem to prefer something else...perhaps
-      the spiral patterns they have will explain?'
-    textB: 'Under the inspection light, they collapse rapidly. Not a burn, but erased..
+      They
+      seem to prefer something else...perhaps their large mouth will explain?'
+    textD: 'Under the inspection light, they collapse rapidly. Not a burn, but erased..
 
       As
       if it exposed it for what they really are. Perhaps the UV is responsible for
       why they avoid the daylight?'
-    textC: 
-    textD: 
-    imageA: {fileID: 0}
+    imageA: {fileID: 8390678095838365347, guid: cde67fe0ce6d2214284b546b67507507, type: 3}
     imageB: {fileID: 0}
     imageC: {fileID: 0}
     imageD: {fileID: 0}
@@ -82,15 +83,18 @@ MonoBehaviour:
     imageB: {fileID: 0}
     imageC: {fileID: 0}
     imageD: {fileID: 0}
-  - layout: {fileID: 3671605574920047432, guid: 714783606f1130d46add62045a7e6fbd, type: 3}
-    textA: Cutting the surface does nothing. It grows back faster than it is removed.
+  - layout: {fileID: 3671605574920047432, guid: b191c64eb2c198f428530da38559661f, type: 3}
+    textA: Pitcher
+    textB: 'Cutting the surface does nothing. It grows back faster than it is removed.
       But the structure is not uniform. There are points where everything connects.
-      If I break those, the whole thing falls. It seems to only work on the ones
-      with stripes?
-    textB: 
+      If I break those, the whole thing falls. It seems to only work on the large
+      pitcher type variant....
+
+      I have crossed out its weak points in the image
+      to the left.'
     textC: 
     textD: 
-    imageA: {fileID: -131896887491537849, guid: 9ed1b74ed00a32e41906a8cbbdd50064, type: 3}
-    imageB: {fileID: 0}
+    imageA: {fileID: -7201280966428126598, guid: 065aad82e2f7c794b8ca08b457467e37, type: 3}
+    imageB: {fileID: -131896887491537849, guid: 9ed1b74ed00a32e41906a8cbbdd50064, type: 3}
     imageC: {fileID: 0}
     imageD: {fileID: 0}

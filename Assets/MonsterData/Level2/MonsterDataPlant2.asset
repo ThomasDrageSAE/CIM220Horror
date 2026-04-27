@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: MonsterDataPlant2
   m_EditorClassIdentifier: 
   monsterName: Plant2
-  description: 
+  description: Flower
   monsterImage: {fileID: 6941706853065814016, guid: cac120f03edfaff46aba647ba6c2fb65, type: 3}
-  defeatType: 0
+  defeatType: 3
   backgroundImage: {fileID: -820463262176930726, guid: d7c818e1d7e34c341b8c4d33d4815318, type: 3}
+  requiredFlashCount: 3
   introDialogue:
   - The plants look really different around here.
   - Are they native to this area?

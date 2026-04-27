@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d95b766b5441cbb47b5067934fdc2eb3, type: 3}
-  m_Name: MonsterDataGhost2
+  m_Name: MonsterDataPlant3
   m_EditorClassIdentifier: 
-  monsterName: Ghost2
-  description: Horse
-  monsterImage: {fileID: -7690393027686545325, guid: a029f3d03b8588e44a91ebbd724b1875, type: 3}
+  monsterName: Flytrap
+  description: Flytrap
+  monsterImage: {fileID: 8390678095838365347, guid: cde67fe0ce6d2214284b546b67507507, type: 3}
   defeatType: 2
-  backgroundImage: {fileID: 6480572467985121676, guid: 61ad412ba236a434aa73f7414dada648, type: 3}
+  backgroundImage: {fileID: -820463262176930726, guid: d7c818e1d7e34c341b8c4d33d4815318, type: 3}
   introDialogue:
-  - Why do I hear galloping?
+  - Is that a venus flytrap?
+  - Either there's some really big flies out here, or it's eating something else!
   fightDialogue:
-  - Is that a horse?
+  - How can I defeat it, without getting near it?
   defeatDialogue:
-  - Wow....
+  - That was close!
   useCustomImageSize: 0
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 1
-  motionStyle: 0
+  motionStyle: 1
   useGlitchMotion: 0

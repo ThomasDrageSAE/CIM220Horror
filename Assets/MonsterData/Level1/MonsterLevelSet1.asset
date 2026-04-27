@@ -16,6 +16,7 @@ MonoBehaviour:
   possibleMonsters:
   - {fileID: 11400000, guid: c3c2a3fcc1f789b4e9d0e83dd63d0126, type: 2}
   - {fileID: 11400000, guid: 48604a19781883d4a9b9fd759744b6e5, type: 2}
+  - {fileID: 11400000, guid: f05b75078e488c749ac44e576c3911bb, type: 2}
   betweenFightDialogue:
   - Whatever that was, it wasn't alone.
   - '"The air shifts again."'

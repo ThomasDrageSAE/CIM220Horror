@@ -34,6 +34,7 @@ public class MonsterEncounterManager : MonoBehaviour
     private bool fightDialogueShown;
     private bool monsterRevealed;
     private bool endingReached;
+    private int currentFlashCount;
     
     [Header("Effects")]
     [SerializeField] private ScreenShakeUI screenShake;
@@ -58,6 +59,8 @@ public class MonsterEncounterManager : MonoBehaviour
     public System.Action OnEndingStarted;
     public System.Action OnEndingFinished;
     
+    [SerializeField] private PhoneTimeManager phoneTimeManager;
+    
     
     
 
@@ -68,6 +71,7 @@ public class MonsterEncounterManager : MonoBehaviour
         fightDialogueShown = false;
         monsterRevealed = false;
         currentDialoguePhase = DialoguePhase.None;
+        currentFlashCount = 0;
 
         MonsterLevelSet levelSet = GetLevelSet(levelNumber);
 
@@ -118,6 +122,8 @@ public class MonsterEncounterManager : MonoBehaviour
 
         ShowDefeatDialogue();
         RefreshUI();
+        if (phoneTimeManager != null)
+            phoneTimeManager.StartNormalTime();
     }
 
     public void ShowFightDialogue()
@@ -348,6 +354,13 @@ public class MonsterEncounterManager : MonoBehaviour
                 firstMonsterRevealDone = true;
             }
         }
+        if (phoneTimeManager != null && currentMonster != null)
+        {
+            if (currentMonster.defeatType == MonsterDefeatType.SyncTime)
+                phoneTimeManager.StartFastTime();
+            else
+                phoneTimeManager.StartNormalTime();
+        }
     }
 
     private void HideMonsterUI()
@@ -415,6 +428,46 @@ public class MonsterEncounterManager : MonoBehaviour
 
         if (batteryManager != null)
             batteryManager.DrainWrongChoice();
+
+        return false;
+    }
+    
+    public bool TryFlashlight()
+    {
+        if (currentMonster == null)
+            return false;
+
+        if (currentMonsterDefeated)
+            return false;
+
+        if (!monsterRevealed)
+            return false;
+
+        if (currentMonster.defeatType != MonsterDefeatType.Flash)
+        {
+            if (batteryManager != null)
+                batteryManager.DrainWrongChoice();
+
+            Debug.Log("[Flashlight] Wrong monster for flashlight.");
+            return false;
+        }
+
+        currentFlashCount++;
+
+        int requiredFlashes = Mathf.Max(1, currentMonster.requiredFlashCount);
+
+        Debug.Log("[Flashlight] Count: " + currentFlashCount + "/" + requiredFlashes);
+
+        if (monsterMotion != null)
+            monsterMotion.ShrinkPulse(0.25f);
+        else
+            Debug.LogWarning("[Flashlight] No MonsterIdleMotion assigned.");
+
+        if (currentFlashCount >= requiredFlashes)
+        {
+            MarkCurrentMonsterDefeated();
+            return true;
+        }
 
         return false;
     }

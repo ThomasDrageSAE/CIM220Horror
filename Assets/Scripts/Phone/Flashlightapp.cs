@@ -61,11 +61,11 @@ public class FlashlightApp : MonoBehaviour
 
         if (encounterManager != null)
         {
-            bool defeated = encounterManager.TryDefeatMonster(MonsterDefeatType.Flash);
+            bool defeated = encounterManager.TryFlashlight();
 
             Debug.Log(defeated
                 ? "[FlashlightApp] Monster defeated with flashlight."
-                : "[FlashlightApp] Flashlight was wrong. Battery drained.");
+                : "[FlashlightApp] Flashlight used. Monster not defeated yet.");
         }
         else
         {

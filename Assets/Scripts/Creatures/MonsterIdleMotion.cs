@@ -200,4 +200,39 @@ public class MonsterIdleMotion : MonoBehaviour
     {
         motionStyle = newStyle;
     }
+    
+    public void ShrinkPulse(float shrinkAmount = 0.08f)
+    {
+        StopCoroutine(nameof(ShrinkPulseRoutine));
+        StartCoroutine(ShrinkPulseRoutine(shrinkAmount));
+    }
+
+    private System.Collections.IEnumerator ShrinkPulseRoutine(float shrinkAmount)
+    {
+        Vector3 originalScale = transform.localScale;
+        Vector3 targetScale = originalScale * (1f - shrinkAmount);
+
+        float t = 0f;
+        float duration = 0.15f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+            transform.localScale = Vector3.Lerp(originalScale, targetScale, t);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.05f);
+
+        t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.deltaTime / duration;
+            transform.localScale = Vector3.Lerp(targetScale, originalScale, t);
+            yield return null;
+        }
+
+        transform.localScale = originalScale;
+    }
 }

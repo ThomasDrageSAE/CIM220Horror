@@ -10,19 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d95b766b5441cbb47b5067934fdc2eb3, type: 3}
-  m_Name: MonsterDataGhost2
+  m_Name: MonsterDataWolfDeer
   m_EditorClassIdentifier: 
-  monsterName: Ghost2
-  description: Horse
-  monsterImage: {fileID: -7690393027686545325, guid: a029f3d03b8588e44a91ebbd724b1875, type: 3}
-  defeatType: 2
-  backgroundImage: {fileID: 6480572467985121676, guid: 61ad412ba236a434aa73f7414dada648, type: 3}
-  introDialogue:
-  - Why do I hear galloping?
-  fightDialogue:
-  - Is that a horse?
-  defeatDialogue:
-  - Wow....
+  monsterName: 
+  description: 
+  monsterImage: {fileID: 0}
+  defeatType: 0
+  backgroundImage: {fileID: 0}
+  requiredFlashCount: 1
+  introDialogue: []
+  fightDialogue: []
+  defeatDialogue: []
   useCustomImageSize: 0
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}

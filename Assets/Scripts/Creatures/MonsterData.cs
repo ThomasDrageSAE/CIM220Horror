@@ -13,6 +13,9 @@ public class MonsterData : ScriptableObject
 
     [Header("Background")]
     public Sprite backgroundImage;
+    
+    [Header("Flashlight Settings")]
+    public int requiredFlashCount = 1;
 
     [Header("Dialogue")]
     [TextArea(2, 6)] public string[] introDialogue;

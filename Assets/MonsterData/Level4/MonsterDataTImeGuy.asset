@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d95b766b5441cbb47b5067934fdc2eb3, type: 3}
   m_Name: MonsterDataTImeGuy
   m_EditorClassIdentifier: 
-  monsterName: 
+  monsterName: Solaris
   description: 
   monsterImage: {fileID: 21300000, guid: 36e7fdfff542a154eace6a4cc52106b6, type: 3}
-  defeatType: 0
-  backgroundImage: {fileID: 3068627696388785331, guid: 41d0a26ad9351414b8de13b36bedff86, type: 3}
+  defeatType: 8
+  backgroundImage: {fileID: 3285095187718985576, guid: aafed17c1c03e9647b516d8c79370d6c, type: 3}
+  requiredFlashCount: 1
   introDialogue:
   - Oh, there's someone else here.
   - Hello!
@@ -29,6 +30,6 @@ MonoBehaviour:
   useCustomImageSize: 1
   customImageSize: {x: 540, y: 540}
   imagePositionOffset: {x: 0, y: 0}
-  preserveAspect: 1
+  preserveAspect: 0
   motionStyle: 2
-  useGlitchMotion: 0
+  useGlitchMotion: 1

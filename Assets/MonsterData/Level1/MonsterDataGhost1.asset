@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MonsterDataGhost1
   m_EditorClassIdentifier: 
   monsterName: Ghost1
-  description: test
+  description: Woman
   monsterImage: {fileID: -8496399968298113383, guid: 888c15bbc33749c419cf83cdc5c5a211, type: 3}
   defeatType: 1
   backgroundImage: {fileID: 6480572467985121676, guid: 61ad412ba236a434aa73f7414dada648, type: 3}
