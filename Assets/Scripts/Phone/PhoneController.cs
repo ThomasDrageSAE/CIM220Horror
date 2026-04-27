@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class PhoneController : MonoBehaviour
 {
-    public enum PhoneApp { None, Camera, UV }
+    public enum PhoneApp { None, Camera, UV, Flashlight }
 
     [Header("App References")]
     public CameraApp cameraApp;
     public UVApp uvApp;
+    public FlashlightApp flashlightApp;
 
     [Header("UI References")]
     public GameObject homeScreenRoot;
@@ -14,7 +15,6 @@ public class PhoneController : MonoBehaviour
     private PhoneApp _activeApp = PhoneApp.None;
 
     public static PhoneController Instance { get; private set; }
-    
 
     private void Awake()
     {
@@ -59,6 +59,14 @@ public class PhoneController : MonoBehaviour
                 else
                     Debug.LogWarning("UVApp is not assigned.");
                 break;
+
+            case PhoneApp.Flashlight:
+                Debug.Log("Activating Flashlight app");
+                if (flashlightApp != null)
+                    flashlightApp.Activate();
+                else
+                    Debug.LogWarning("FlashlightApp is not assigned.");
+                break;
         }
     }
 
@@ -74,6 +82,11 @@ public class PhoneController : MonoBehaviour
             case PhoneApp.UV:
                 if (uvApp != null)
                     uvApp.Deactivate();
+                break;
+
+            case PhoneApp.Flashlight:
+                if (flashlightApp != null)
+                    flashlightApp.Deactivate();
                 break;
         }
 
