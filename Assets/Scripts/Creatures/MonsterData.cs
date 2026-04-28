@@ -33,4 +33,16 @@ public class MonsterData : ScriptableObject
     
     public MonsterIdleMotion.MotionStyle motionStyle = MonsterIdleMotion.MotionStyle.Float;
     public bool useGlitchMotion = false;
+    
+    [Header("Game Over")]
+    public Sprite gameOverImage;
+    [TextArea(2, 6)] public string[] gameOverDialogue;
+    
+    [Header("Monster Audio")]
+    public GameSoundSet introSound;
+    public GameSoundSet defeatSound;
+    public GameSoundSet gameOverSound;
+    
+    [Header("Hints")]
+    [TextArea(2, 6)] public string[] hintDialogue;
 }

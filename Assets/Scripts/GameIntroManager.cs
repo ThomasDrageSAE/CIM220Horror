@@ -20,6 +20,8 @@ public class GameIntroManager : MonoBehaviour
     [Header("Timing")]
     [SerializeField] private float delayAfterFadeOut = 0.25f;
     [SerializeField] private float delayBeforeFadeIn = 0.2f;
+    
+    [SerializeField] private HideDuringTutorial tutorialVisibility;
 
     private void Start()
     {
@@ -32,6 +34,9 @@ public class GameIntroManager : MonoBehaviour
 
         if (howToPanel != null)
             howToPanel.SetActive(true);
+        
+        if (tutorialVisibility != null)
+            tutorialVisibility.HideObjects();
     }
 
     public void CloseHowTo()
@@ -101,6 +106,9 @@ public class GameIntroManager : MonoBehaviour
     private void FinishIntroAndStartGame()
     {
         PlayerInputLock.SetLocked(false);
+
+        if (tutorialVisibility != null)
+            tutorialVisibility.ShowObjects();
 
         if (encounterManager != null)
             encounterManager.StartLevel(1);

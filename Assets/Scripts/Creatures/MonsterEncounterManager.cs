@@ -65,11 +65,19 @@ public class MonsterEncounterManager : MonoBehaviour
     
     [SerializeField] private PhoneTimeManager phoneTimeManager;
     
+    public bool IsInFight =>
+        currentMonster != null &&
+        monsterRevealed &&
+        !currentMonsterDefeated &&
+        currentDialoguePhase == DialoguePhase.None &&
+        !endingReached;
+    
     
     
 
     public void StartLevel(int levelNumber)
     {
+        Debug.Log("[MonsterEncounter] Starting level: " + levelNumber);
         currentLevel = levelNumber;
         currentMonsterDefeated = false;
         fightDialogueShown = false;
@@ -123,6 +131,8 @@ public class MonsterEncounterManager : MonoBehaviour
 
         currentMonsterDefeated = true;
         currentDialoguePhase = DialoguePhase.Defeat;
+        
+        PlayMonsterSound(currentMonster.defeatSound);
 
         ShowDefeatDialogue();
         RefreshUI();
@@ -258,10 +268,19 @@ public class MonsterEncounterManager : MonoBehaviour
 
     private void GoToNextLevel()
     {
+        Debug.Log("[MonsterEncounter] Going to next level from: " + currentLevel);
+
         currentDialoguePhase = DialoguePhase.None;
 
         if (NetworkProgressionManager.Instance != null)
+        {
+            Debug.Log("[MonsterEncounter] Advancing progression.");
             NetworkProgressionManager.Instance.AdvanceProgression();
+        }
+        else
+        {
+            Debug.LogWarning("[MonsterEncounter] No NetworkProgressionManager found.");
+        }
 
         StartLevel(currentLevel + 1);
     }
@@ -409,6 +428,7 @@ public class MonsterEncounterManager : MonoBehaviour
         }
 
         currentDialoguePhase = DialoguePhase.Intro;
+        PlayMonsterSound(currentMonster.introSound);
         dialogueManager.ShowLines(currentMonster.introDialogue);
     }
 
@@ -488,5 +508,31 @@ public class MonsterEncounterManager : MonoBehaviour
         }
 
         return false;
+    }
+    
+    private void PlayMonsterSound(GameSoundSet sound)
+    {
+        if (sound == null)
+            return;
+
+        if (GameAudioManager.Instance != null)
+            GameAudioManager.Instance.Play(sound);
+    }
+    
+    public void ShowCurrentMonsterHint()
+    {
+        if (currentMonster == null)
+            return;
+
+        if (!monsterRevealed || currentMonsterDefeated || endingReached)
+            return;
+
+        if (currentMonster.hintDialogue == null || currentMonster.hintDialogue.Length == 0)
+        {
+            ShowInteractionDialogue(new string[] { "There is nothing useful to say yet." });
+            return;
+        }
+
+        ShowInteractionDialogue(currentMonster.hintDialogue);
     }
 }

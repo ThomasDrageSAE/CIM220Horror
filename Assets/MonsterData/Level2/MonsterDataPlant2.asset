@@ -33,5 +33,13 @@ MonoBehaviour:
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 1
+  causesTemperatureDrop: 0
   motionStyle: 1
   useGlitchMotion: 0
+  gameOverImage: {fileID: 2291689168655694220, guid: ff9dbbf5deb59f34aa260eec3d9c65a3, type: 3}
+  gameOverDialogue: []
+  introSound: {fileID: 0}
+  defeatSound: {fileID: 0}
+  gameOverSound: {fileID: 0}
+  hintDialogue:
+  - Try a pulse, rather than a constant beam

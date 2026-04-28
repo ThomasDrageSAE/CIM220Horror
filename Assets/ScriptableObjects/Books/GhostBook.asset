@@ -35,7 +35,8 @@ MonoBehaviour:
       I
       have stopped naming them.
 
-      There is a lot of power in a name.'
+      But if the temperature drops really fast,
+      it''s most likely a spirit.'
     textC: 
     textD: 
     imageA: {fileID: 414262456008988909, guid: b6331614d4b599d479f493d5a48a67f0, type: 3}
@@ -53,6 +54,17 @@ MonoBehaviour:
     imageB: {fileID: 0}
     imageC: {fileID: 0}
     imageD: {fileID: 0}
+  - layout: {fileID: 3671605574920047432, guid: 781c553c4079c4141a3d7fd57a077ce1, type: 3}
+    textA: This could possibly be the ghost that keeps coming back, it would make
+      sense as the ghost rides a horse....I don't know why it keeps coming back no
+      matter how many times I destroy him with the UV light...
+    textB: 
+    textC: 
+    textD: 
+    imageA: {fileID: -6090594479009935761, guid: b0bdd106edc193a4c9510cfa29f6882d, type: 3}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 2054620009573532433, guid: daad0ca62900cc64583361cbd74adb5e, type: 3}
   - layout: {fileID: 818466465623097833, guid: 16114899c58a77b40a5e73196b0bc68b, type: 3}
     textA: Test 2
     textB: Test 2
@@ -65,13 +77,25 @@ MonoBehaviour:
   - layout: {fileID: 470820575514630869, guid: 8350bb0e530f4f847bc89e5a6414e355, type: 3}
     textA: There are those that refuse to be seen directly. You can feel their presence,
       but they remain unseen...
-    textB: The lens holds them! It seems a camera is able to see them. I have yet
-      to test this on digital cameras. If you cannot see it, capture it.
+    textB: The lens holds them! It seems a camera is able to hurt them. Not all of
+      them, only a select fewI have yet to test this on digital cameras. If the UV
+      doesn't work, capture it on film.
     textC: 
     textD: 
     imageA: {fileID: -8853496014264632996, guid: b55209538fcd8394cb4322d22445aa83, type: 3}
     imageB: {fileID: 0}
     imageC: {fileID: 2001516887877922869, guid: 9e3d2e1e33417724185301378553aee8, type: 3}
+    imageD: {fileID: 0}
+  - layout: {fileID: 3671605574920047432, guid: 781c553c4079c4141a3d7fd57a077ce1, type: 3}
+    textA: I've seen the ghost of this woman, I tried to get a photo of her, but
+      she was frightned and flew off. Could she possibly be one of the types that
+      can be destroyed with a camera?
+    textB: 
+    textC: 
+    textD: 
+    imageA: {fileID: 7736703063926993187, guid: 47d5e17aa47863a4fb98d02a788b5c38, type: 3}
+    imageB: {fileID: -1075207498280336613, guid: 49a8a794ef0e7fc4a82492eca8298e08, type: 3}
+    imageC: {fileID: -8825618694164624126, guid: 5ae51f2fd0669d449a6084cfeacb6570, type: 3}
     imageD: {fileID: 0}
   - layout: {fileID: 4469434606004700145, guid: 13f5ebe6076bb59439d9876f37374a2e, type: 3}
     textA: Do not assume consistency.
@@ -82,5 +106,20 @@ MonoBehaviour:
     textD: If the method fails, it was never the right one. Or it learned...
     imageA: {fileID: 935499960716218818, guid: 9b3b5521da93be64a9032e451f72eaf8, type: 3}
     imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 4370654923283873279, guid: e7e6a1ba164eda74f9a90732741b21b7, type: 3}
+    textA: I remember seeing this guy around town, the clothes he wore are very similar
+      to one of the ghosts I see often. Unlike the others, it seems to only come
+      out at night. I have tried both other methods to defeat it but they did not
+      work.
+    textB: Could it be possible that the reason it comes out at night is not because
+      of the UV, but because of the brightness? I must shine a torch at it to confirm!
+    textC: It seems that some of the more recent ghosts have evolved compared to
+      the older ones, the older methods don't seem to work on them, I must try my
+      light theory soon.
+    textD: 
+    imageA: {fileID: -5009818906094167413, guid: ca7718e910cc25a41938dc94dadab29f, type: 3}
+    imageB: {fileID: -8152136949519774684, guid: 0cea26b24b75432489a14a0adf447ba3, type: 3}
     imageC: {fileID: 0}
     imageD: {fileID: 0}

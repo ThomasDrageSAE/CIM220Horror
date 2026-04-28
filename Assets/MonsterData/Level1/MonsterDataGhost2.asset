@@ -31,3 +31,10 @@ MonoBehaviour:
   causesTemperatureDrop: 1
   motionStyle: 0
   useGlitchMotion: 0
+  gameOverImage: {fileID: 4605983621693211326, guid: adba937943b68ea478414f0e202f5b2f, type: 3}
+  gameOverDialogue: []
+  introSound: {fileID: 0}
+  defeatSound: {fileID: 0}
+  gameOverSound: {fileID: 0}
+  hintDialogue:
+  - Try reading the newspaper clippings in the ghosts book

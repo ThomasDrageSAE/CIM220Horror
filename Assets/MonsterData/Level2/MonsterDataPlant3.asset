@@ -17,6 +17,7 @@ MonoBehaviour:
   monsterImage: {fileID: 8390678095838365347, guid: cde67fe0ce6d2214284b546b67507507, type: 3}
   defeatType: 2
   backgroundImage: {fileID: -820463262176930726, guid: d7c818e1d7e34c341b8c4d33d4815318, type: 3}
+  requiredFlashCount: 1
   introDialogue:
   - Is that a venus flytrap?
   - Either there's some really big flies out here, or it's eating something else!
@@ -28,5 +29,13 @@ MonoBehaviour:
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 1
+  causesTemperatureDrop: 0
   motionStyle: 1
   useGlitchMotion: 0
+  gameOverImage: {fileID: 2291689168655694220, guid: ff9dbbf5deb59f34aa260eec3d9c65a3, type: 3}
+  gameOverDialogue: []
+  introSound: {fileID: 0}
+  defeatSound: {fileID: 0}
+  gameOverSound: {fileID: 0}
+  hintDialogue:
+  - There's a reason they only grow in dark areas.

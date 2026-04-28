@@ -16,14 +16,27 @@ public class PlantRootWeakPoint : MonoBehaviour, IPointerClickHandler
     [SerializeField] private AudioClip clickSound;
     private bool clicked;
 
+    [Header("Shrink Feedback")]
+    [SerializeField] private bool shrinkOnClick = true;
+    [SerializeField] private float clickedScale = 0.75f;
+    [SerializeField] private float shrinkSpeed = 10f;
+
+    private Vector3 originalScale;
+    private Vector3 targetScale;
     private void Awake()
     {
+        originalScale = transform.localScale;
+        targetScale = originalScale;
         if (rootImage == null)
             rootImage = GetComponent<Image>();
 
         ResetRoot();
     }
 
+    private void Update()
+    {
+        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * shrinkSpeed);
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         if (clicked)
@@ -34,6 +47,8 @@ public class PlantRootWeakPoint : MonoBehaviour, IPointerClickHandler
 
         clicked = true;
 
+        if (shrinkOnClick)
+            targetScale = originalScale * clickedScale;
         if (rootImage != null)
             rootImage.color = clickedColor;
 
@@ -48,7 +63,8 @@ public class PlantRootWeakPoint : MonoBehaviour, IPointerClickHandler
     public void ResetRoot()
     {
         clicked = false;
-
+        targetScale = originalScale;
+    
         if (rootImage != null)
             rootImage.color = normalColor;
     }

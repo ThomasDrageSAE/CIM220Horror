@@ -31,5 +31,13 @@ MonoBehaviour:
   customImageSize: {x: 540, y: 540}
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 0
+  causesTemperatureDrop: 0
   motionStyle: 2
   useGlitchMotion: 1
+  gameOverImage: {fileID: -8296813040338421666, guid: 914acc45ce4d9a54bbf0ae95ebf64224, type: 3}
+  gameOverDialogue: []
+  introSound: {fileID: 0}
+  defeatSound: {fileID: 0}
+  gameOverSound: {fileID: 0}
+  hintDialogue:
+  - Look at your phone time, is it going up or down.

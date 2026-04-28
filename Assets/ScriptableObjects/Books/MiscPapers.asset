@@ -14,9 +14,99 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookTitle: Papers
   spreads:
-  - layout: {fileID: 0}
-    textA: 
-    textB: 
+  - layout: {fileID: 6211519498159910813, guid: 274d6efd15c355843aab952415fd5afe, type: 3}
+    textA: 'Anything I can''t describe in the other books will go in this one. I
+      think I have seen one of them, but I could only sketch from memory.
+
+
+      A
+      lot of this info is from older local texts and I have no visual description
+      of what they are, just what they can do.'
+    textB: Perhaps they are the cause of the other creatures in the area? There's
+      a lot of weird symbols in the area, perhaps worshippers?
+    textC: 
+    textD: 
+    imageA: {fileID: 4270343692058737628, guid: bf2b8e7b4bd89f043870362675472ec1, type: 3}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 470820575514630869, guid: 47b82e718860d8b4980dae3a14c78206, type: 3}
+    textA: I don't know who or what this being is, I dont even know if it is from
+      this realm.
+    textB: 'I witnessed this one myself in deeper parts of the forest near the old
+      cabins. At first I thought I was seeing things, but from what I could see he
+      was altering space, and travelling through portals.
+
+
+      It saw me and looked
+      right at me, which is what I based my sketch from. When it looked at me (Or
+      so I thought) I realised it was looking right through me, almost as if me,
+      a human was so insignificant, it was looking at something else. The same way
+      we walk through a forest and pay no mind to all the small bugs we walk on....'
+    textC: ???
+    textD: 
+    imageA: {fileID: 21300000, guid: 36e7fdfff542a154eace6a4cc52106b6, type: 3}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 4469434606004700145, guid: 7c005b3cb2c21dc49bbad0344b8fd157, type: 3}
+    textA: 'If you seen him don''t run!
+
+'
+    textB: 'Just hide or stay still!
+
+'
+    textC: He seems to be able to freeze time!!
+    textD: I need to find more information on this being, for now all I can say is
+      there's no point running, as he will catch you if he so chooses.
+    imageA: {fileID: 0}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 470820575514630869, guid: 382324df8ff70ba43858894e7d1ba04a, type: 3}
+    textA: I have spent years translating this text, they speak of some sort of ancient
+      being. Who knows when this was written....My translation is to the right.
+    textB: "Solaris is not a creature of flesh, but of motion.\nIt does not chase.
+      It does not hide.\nIt waits\u2026 and in waiting, it devours.\n\nWhere it lingers,
+      time loosens its shape.\nMoments stretch. Minutes slip.\nThe world begins to
+      move\u2026 faster than it should.\n\nIf you feel the hours tightening around
+      you,\nit has already seen you."
+    textC: Solaris
+    textD: 
+    imageA: {fileID: 2916194396839415076, guid: 99fccc0fabdd3264faff0d66bfa45356, type: 3}
+    imageB: {fileID: 0}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 470820575514630869, guid: 27b86f1d9cbaee04db5d2bb6679e69ca, type: 3}
+    textA: "From that translation I gather they worshipped someone, or something...called
+      Solaris.\n\nAt first I thought it was something about the sun and time, but
+      upon further reading it seems this being was feared and worshiped long ago...\n\nI
+      havnt't seen anything on it's weaknesses. \n\nLight does nothing.\nSound does
+      nothing.\nEven stillness offers no protection.\n\n"
+    textB: 'I saw this passage of text:
+
+      When time breaks,
+
+      you must
+      restore what is true.
+
+
+      From what I could gather, it seems to alter our
+      perception of time, and feed off that somehow.
+
+
+      I recall hearing something
+      about a local hiker claiming to see time alter in front of him, he looked at
+      his watch and it was moving faster!
+
+
+      He said as soon as he fixed his
+      watch and reset it, it all stopped.
+
+      Could the same be said for electronic
+      devices?
+
+'
     textC: 
     textD: 
     imageA: {fileID: 0}

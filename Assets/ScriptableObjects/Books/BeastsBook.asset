@@ -12,18 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd20df6c9479f3d449851f4ca53de79e, type: 3}
   m_Name: BeastsBook
   m_EditorClassIdentifier: 
-  bookTitle: 
+  bookTitle: Beasts
   spreads:
-  - layout: {fileID: 6211519498159910813, guid: cc6383de98fd6294388821de6cde789f, type: 3}
+  - layout: {fileID: 6211519498159910813, guid: 274d6efd15c355843aab952415fd5afe, type: 3}
     textA: 'The local animals have been changing over the last few years. Mainly
       the deer, but they are not deer anymore.
 
 
       Maybe they kept the form to
-      prey easier?
+      hunt prey easier?
 
 
-      I will try to keep a log of these beasts in this book. '
+      I will try to keep a log of these beasts in this
+      book. '
     textB: 
     textC: 
     textD: 
@@ -31,15 +32,26 @@ MonoBehaviour:
     imageB: {fileID: 0}
     imageC: {fileID: 0}
     imageD: {fileID: 0}
-  - layout: {fileID: 470820575514630869, guid: 1a4ce467c9bbd91459e6f1d16a4f9a9e, type: 3}
+  - layout: {fileID: 470820575514630869, guid: a5e688b43a5f7f44598b6b05ea243423, type: 3}
     textA: Skinwalker Stag
     textB: Some wear the skin poorly. The legs bend wrong. The head lags behind the
       body.
     textC: Do not look away. It cannot hold the shape forever. It relies on darkness
-      to hide, so attack it with light.
+      to hide. I took a photo of it to study it, but that seemed to weaken it.
     textD: 
     imageA: {fileID: 8191607871805606840, guid: 7909af0775c51c643afc2a28723c90f6, type: 3}
     imageB: {fileID: -8579180617657454444, guid: ae45ff052776b1840be37ac3d2a07621, type: 3}
+    imageC: {fileID: 0}
+    imageD: {fileID: 0}
+  - layout: {fileID: 470820575514630869, guid: 1a4ce467c9bbd91459e6f1d16a4f9a9e, type: 3}
+    textA: 
+    textB: Is it possible the simple act of observing it weakens it?
+    textC: This would explain why it avoids trail cameras...
+    textD: '
+
+'
+    imageA: {fileID: 8274388944355335981, guid: 7323464a9002fa14ebf2f361d2a47928, type: 3}
+    imageB: {fileID: 0}
     imageC: {fileID: 0}
     imageD: {fileID: 0}
   - layout: {fileID: 4469434606004700145, guid: b1f56c105ade1124b882fddd07899040, type: 3}
@@ -61,14 +73,42 @@ MonoBehaviour:
     imageB: {fileID: 0}
     imageC: {fileID: 0}
     imageD: {fileID: 0}
-  - layout: {fileID: 818466465623097833, guid: 16114899c58a77b40a5e73196b0bc68b, type: 3}
-    textA: Many-Eyed Stag
-    textB: 
+  - layout: {fileID: 3969447794958561858, guid: 7c421c19313b57743bb1e86d950a6803, type: 3}
+    textA: Sound Stag
+    textB: 'Although it has eyes, it hunts using sound. I don''t think it can see
+      at all.
+
+
+      It''s hearing is incredible though.
+
+
+      It heard my headphones
+      playing music quietly over a kilometer away!
+
+
+'
     textC: 
     textD: '
 
 '
-    imageA: {fileID: 8191607871805606840, guid: 7909af0775c51c643afc2a28723c90f6, type: 3}
+    imageA: {fileID: 865804816067458902, guid: d7bf469b62ce5af4985a453e6e243d87, type: 3}
     imageB: {fileID: 3254737427981163177, guid: 09f0072bacf1099408db4e4f43708378, type: 3}
-    imageC: {fileID: 0}
+    imageC: {fileID: 1507147114455510500, guid: 0450db69b07592147a312c658377ad6f, type: 3}
+    imageD: {fileID: 0}
+  - layout: {fileID: 6211519498159910813, guid: 274d6efd15c355843aab952415fd5afe, type: 3}
+    textA: 'If you seen this in the forest you must REMAIN QUIET!
+
+
+      Turn off
+      any music, don''t breath too loudly, and if your on a call, MUTE THE CALL!'
+    textB: 'Here is a larger sketch to identify it better.
+
+'
+    textC: 
+    textD: '
+
+'
+    imageA: {fileID: 865804816067458902, guid: d7bf469b62ce5af4985a453e6e243d87, type: 3}
+    imageB: {fileID: 3254737427981163177, guid: 09f0072bacf1099408db4e4f43708378, type: 3}
+    imageC: {fileID: 1507147114455510500, guid: 0450db69b07592147a312c658377ad6f, type: 3}
     imageD: {fileID: 0}

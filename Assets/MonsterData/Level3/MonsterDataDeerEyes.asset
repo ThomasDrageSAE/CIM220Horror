@@ -31,5 +31,13 @@ MonoBehaviour:
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 1
+  causesTemperatureDrop: 0
   motionStyle: 3
   useGlitchMotion: 0
+  gameOverImage: {fileID: -6069193726406939886, guid: 790c02c4567027d4cba5ef1e2095b1f1, type: 3}
+  gameOverDialogue: []
+  introSound: {fileID: 0}
+  defeatSound: {fileID: 0}
+  gameOverSound: {fileID: 0}
+  hintDialogue:
+  - Your phone call is making noise.

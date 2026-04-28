@@ -14,6 +14,9 @@ public class PlantRootPuzzleController : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private bool disableAfterSolved = true;
 
+    [Header("Monster Feedback")]
+    [SerializeField] private MonsterIdleMotion monsterMotion;
+    [SerializeField] private float monsterShrinkAmount = 0.12f;
     private int clickedRoots;
     private bool solved;
     private bool currentlyShowing;
@@ -54,6 +57,9 @@ public class PlantRootPuzzleController : MonoBehaviour
             return;
 
         clickedRoots++;
+        
+        if (monsterMotion != null)
+            monsterMotion.ShrinkPulse(monsterShrinkAmount);
 
         Debug.Log("Plant root clicked: " + clickedRoots + "/" + roots.Length);
 

@@ -12,6 +12,9 @@ public class PhoneBatteryManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI batteryText;
     [SerializeField] private Image batteryFillImage;
+    
+    [Header("Game Over")]
+    [SerializeField] private GameOverManager gameOverManager;
 
     public int CurrentBattery => currentBattery;
     public bool IsEmpty => currentBattery <= 0;
@@ -32,9 +35,9 @@ public class PhoneBatteryManager : MonoBehaviour
         currentBattery = Mathf.Clamp(currentBattery - Mathf.Abs(amount), 0, maxBattery);
         RefreshUI();
 
-        if (currentBattery <= 0)
+        if (currentBattery <= 0 && gameOverManager != null)
         {
-            Debug.Log("Battery empty.");
+            gameOverManager.TriggerGameOver();
         }
     }
 
@@ -59,5 +62,8 @@ public class PhoneBatteryManager : MonoBehaviour
 
         if (batteryFillImage != null)
             batteryFillImage.fillAmount = GetBatteryPercent01();
+
+        if (NetworkBatteryManager.Instance != null)
+            NetworkBatteryManager.Instance.SetBattery(currentBattery);
     }
 }
