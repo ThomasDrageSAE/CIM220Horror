@@ -34,17 +34,29 @@ public class SettingsApp : MonoBehaviour
         if (!active)
             return;
 
+        if (encounterManager == null || encounterManager.CurrentMonster == null)
+            return;
+
+        // ❌ WRONG MONSTER → drain battery only
+        if (encounterManager.CurrentMonster.defeatType != MonsterDefeatType.SyncTime)
+        {
+            Debug.Log("[SettingsApp] Sync pressed on wrong monster. Battery drained.");
+
+            if (encounterManager.BatteryManager != null)
+                encounterManager.BatteryManager.DrainWrongChoice();
+
+            return;
+        }
+
+        
         if (phoneTimeManager != null)
             phoneTimeManager.SyncTime();
 
-        if (encounterManager != null)
-        {
-            bool defeated = encounterManager.TryDefeatMonster(MonsterDefeatType.SyncTime);
+        bool defeated = encounterManager.TryDefeatMonster(MonsterDefeatType.SyncTime);
 
-            Debug.Log(defeated
-                ? "[SettingsApp] Monster defeated by syncing time."
-                : "[SettingsApp] Time synced, but wrong monster. Battery drained.");
-        }
+        Debug.Log(defeated
+            ? "[SettingsApp] Time monster defeated by syncing time."
+            : "[SettingsApp] Sync attempted but did not defeat monster.");
     }
 
     public void PressClose()

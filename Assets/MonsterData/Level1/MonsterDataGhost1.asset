@@ -17,6 +17,7 @@ MonoBehaviour:
   monsterImage: {fileID: -8496399968298113383, guid: 888c15bbc33749c419cf83cdc5c5a211, type: 3}
   defeatType: 1
   backgroundImage: {fileID: 6480572467985121676, guid: 61ad412ba236a434aa73f7414dada648, type: 3}
+  requiredFlashCount: 1
   introDialogue:
   - I sense something watching me....
   - It feels colder...
@@ -28,5 +29,6 @@ MonoBehaviour:
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 1
+  causesTemperatureDrop: 1
   motionStyle: 0
   useGlitchMotion: 0

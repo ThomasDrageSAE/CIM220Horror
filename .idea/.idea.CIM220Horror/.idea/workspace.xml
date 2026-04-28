@@ -6,10 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="6abaa505-eda4-4a5f-b2df-1c03f025984f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CIM220Horror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CIM220Horror/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterDataPlant1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterDataPlant1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level3/MonsterDataDeerEyes.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level3/MonsterDataDeerEyes.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost3.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Phone/PhoneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Phone/PhoneController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterEncounterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterEncounterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Phone/SettingsApp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Phone/SettingsApp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/boot.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/globalgamemanagers.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/level0" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/level0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/level1" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/level1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/resources.assets" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/resources.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.resource" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.resource" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +56,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/InteractionDialogueTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MonsterBackgroundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MonsterDialogueManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/NetworkProgressionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/ProgressionImageUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Phone/PhoneAppButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Phone/TemperatureApp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Phone/UVApp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerInputLock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SimpleDialogueUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ProgressionDebugTest.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -147,7 +165,7 @@
       <workItem from="1777217091042" duration="5813000" />
       <workItem from="1777225110628" duration="5250000" />
       <workItem from="1777315314227" duration="3418000" />
-      <workItem from="1777344222901" duration="1600000" />
+      <workItem from="1777344222901" duration="5306000" />
     </task>
     <servers />
   </component>

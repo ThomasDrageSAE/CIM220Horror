@@ -89,7 +89,7 @@ public class GameNetworkController : NetworkBehaviour
         {
             gameStarted.Value = true;
 
-            NetworkManager.Singleton.SceneManager.LoadScene("Game", LoadSceneMode.Single);
+            NetworkManager.Singleton.SceneManager.LoadScene("Game1", LoadSceneMode.Single);
         }
     }
 }

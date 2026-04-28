@@ -17,6 +17,7 @@ MonoBehaviour:
   monsterImage: {fileID: -7690393027686545325, guid: a029f3d03b8588e44a91ebbd724b1875, type: 3}
   defeatType: 2
   backgroundImage: {fileID: 6480572467985121676, guid: 61ad412ba236a434aa73f7414dada648, type: 3}
+  requiredFlashCount: 1
   introDialogue:
   - Why do I hear galloping?
   fightDialogue:
@@ -27,5 +28,6 @@ MonoBehaviour:
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 1
+  causesTemperatureDrop: 1
   motionStyle: 0
   useGlitchMotion: 0

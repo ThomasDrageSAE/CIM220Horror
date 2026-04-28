@@ -61,6 +61,7 @@ public class MonsterEncounterManager : MonoBehaviour
     
     public System.Action OnEndingStarted;
     public System.Action OnEndingFinished;
+    public PhoneBatteryManager BatteryManager => batteryManager;
     
     [SerializeField] private PhoneTimeManager phoneTimeManager;
     
@@ -258,6 +259,10 @@ public class MonsterEncounterManager : MonoBehaviour
     private void GoToNextLevel()
     {
         currentDialoguePhase = DialoguePhase.None;
+
+        if (NetworkProgressionManager.Instance != null)
+            NetworkProgressionManager.Instance.AdvanceProgression();
+
         StartLevel(currentLevel + 1);
     }
 
