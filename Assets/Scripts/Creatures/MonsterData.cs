@@ -28,6 +28,9 @@ public class MonsterData : ScriptableObject
     public Vector2 imagePositionOffset = Vector2.zero;
     public bool preserveAspect = true;
     
+    [Header("Temperature")]
+    public bool causesTemperatureDrop = false;
+    
     public MonsterIdleMotion.MotionStyle motionStyle = MonsterIdleMotion.MotionStyle.Float;
     public bool useGlitchMotion = false;
 }

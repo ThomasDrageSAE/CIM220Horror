@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class PhoneController : MonoBehaviour
 {
-    public enum PhoneApp { None, Camera, UV, Flashlight, Settings }
-
+    public enum PhoneApp { None, Camera, UV, Flashlight, Settings, Call, Temperature }
     [Header("App References")]
     public CameraApp cameraApp;
     public UVApp uvApp;
     public FlashlightApp flashlightApp;
     public SettingsApp settingsApp;
-
+    public CallApp callApp;
+    public TemperatureApp temperatureApp;
+    
     [Header("UI References")]
     public GameObject homeScreenRoot;
 
@@ -68,10 +69,23 @@ public class PhoneController : MonoBehaviour
                 else
                     Debug.LogWarning("FlashlightApp is not assigned.");
                 break;
+            
             case PhoneApp.Settings:
                 Debug.Log("Activating Settings app");
                 if (settingsApp != null)
                     settingsApp.Activate();
+                break;
+            
+            case PhoneApp.Call:
+                Debug.Log("Activating Call app");
+                if (callApp != null)
+                    callApp.Activate();
+                break;
+            
+            case PhoneApp.Temperature:
+                Debug.Log("Activating Temperature app");
+                if (temperatureApp != null)
+                    temperatureApp.Activate();
                 break;
         }
         
@@ -95,9 +109,20 @@ public class PhoneController : MonoBehaviour
                 if (flashlightApp != null)
                     flashlightApp.Deactivate();
                 break;
+            
             case PhoneApp.Settings:
                 if (settingsApp != null)
                     settingsApp.Deactivate();
+                break;
+            
+            case PhoneApp.Call:
+                if (callApp != null)
+                    callApp.Deactivate();
+                break;
+            
+            case PhoneApp.Temperature:
+                if (temperatureApp != null)
+                    temperatureApp.Deactivate();
                 break;
         }
 

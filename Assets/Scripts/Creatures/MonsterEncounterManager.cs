@@ -48,6 +48,9 @@ public class MonsterEncounterManager : MonoBehaviour
     [SerializeField] private Vector2 defaultImageSize = new Vector2(500f, 500f);
     [SerializeField] private Vector2 defaultImagePosition = Vector2.zero;
     private bool firstMonsterRevealDone;
+    
+    [Header("Phone Temperature")]
+    [SerializeField] private PhoneTemperatureManager phoneTemperatureManager;
     public MonsterDefeatType CurrentDefeatType => currentMonster != null ? currentMonster.defeatType : MonsterDefeatType.None;
 
     public MonsterData CurrentMonster => currentMonster;
@@ -124,6 +127,9 @@ public class MonsterEncounterManager : MonoBehaviour
         RefreshUI();
         if (phoneTimeManager != null)
             phoneTimeManager.StartNormalTime();
+        
+        if (phoneTemperatureManager != null)
+            phoneTemperatureManager.SetNormalTemperature();
     }
 
     public void ShowFightDialogue()
@@ -338,14 +344,21 @@ public class MonsterEncounterManager : MonoBehaviour
         monsterRevealed = true;
         RefreshUI();
 
-        // 🎯 APPLY MOTION SETTINGS PER MONSTER
+        if (phoneTemperatureManager != null && currentMonster != null)
+        {
+            if (currentMonster.causesTemperatureDrop)
+                phoneTemperatureManager.SetGhostTemperature();
+            else
+                phoneTemperatureManager.SetNormalTemperature();
+        }
+        
         if (monsterMotion != null && currentMonster != null)
         {
             monsterMotion.SetMotionStyle(currentMonster.motionStyle);
             monsterMotion.SetGlitch(currentMonster.useGlitchMotion);
         }
 
-        // existing screen shake (keep this if you have it)
+       
         if (screenShake != null)
         {
             if (!shakeOnFirstMonsterOnly || !firstMonsterRevealDone)

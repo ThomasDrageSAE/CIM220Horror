@@ -15,14 +15,18 @@ MonoBehaviour:
   monsterName: 
   description: 
   monsterImage: {fileID: 1507147114455510500, guid: 0450db69b07592147a312c658377ad6f, type: 3}
-  defeatType: 0
+  defeatType: 5
   backgroundImage: {fileID: 3068627696388785331, guid: 41d0a26ad9351414b8de13b36bedff86, type: 3}
+  requiredFlashCount: 1
   introDialogue:
-  - test
+  - What's that noise?
+  - Oh, it;s just a deer.
   fightDialogue:
-  - test
+  - Why does it look angry though....
   defeatDialogue:
-  - test
+  - I have no I-deer what that was haha
+  - .............
+  - I'm glad no one heard that.....
   useCustomImageSize: 0
   customImageSize: {x: 500, y: 500}
   imagePositionOffset: {x: 0, y: 0}
