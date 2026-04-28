@@ -17,7 +17,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7405894028819264ba19e9c41e16811f, type: 2}
   - {fileID: 11400000, guid: e56622ac3ce48fe4b8ea4cb5799c0ad9, type: 2}
   - {fileID: 11400000, guid: da86513f571ee8c4b80f1e493afb714a, type: 2}
-  betweenFightDialogue: []
+  betweenFightDialogue:
+  - Ok....I need to get away from this area.
+  - I can't see the cabin yet, I'm probably pretty far off still.
   isEndingLevel: 0
   endingBackground: {fileID: 0}
   endingDialogue: []

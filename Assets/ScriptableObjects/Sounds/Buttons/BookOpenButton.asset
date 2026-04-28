@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BookOpenButton
   m_EditorClassIdentifier: 
   hoverSound: {fileID: 8300000, guid: 4533569678bfa2e41b17bc27cf4751e2, type: 3}
-  clickSound: {fileID: 8300000, guid: 690cceb8a360b9b4288450e0392a374b, type: 3}
+  clickSound: {fileID: 8300000, guid: 7e1e31b48bab7a54a9a1f8790bb444a3, type: 3}
   disabledSound: {fileID: 0}
   randomizePitch: 1
   minPitch: 0.98

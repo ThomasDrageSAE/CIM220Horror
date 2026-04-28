@@ -198,6 +198,20 @@ public class MonsterEncounterManager : MonoBehaviour
                 currentDialoguePhase = DialoguePhase.None;
                 break;
         }
+        
+        if (endingReached)
+        {
+            if (currentDialoguePhase == DialoguePhase.Ending)
+            {
+                currentDialoguePhase = DialoguePhase.None;
+                OnEndingFinished?.Invoke();
+
+                if (NetworkGameStateManager.Instance != null)
+                    NetworkGameStateManager.Instance.SetGameWon();
+            }
+
+            return;
+        }
     }
 
     public void ShowInteractionDialogue(string[] lines)

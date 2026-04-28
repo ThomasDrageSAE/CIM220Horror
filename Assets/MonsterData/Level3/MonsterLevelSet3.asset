@@ -15,6 +15,7 @@ MonoBehaviour:
   levelNumber: 3
   possibleMonsters:
   - {fileID: 11400000, guid: 66bd72119bfa0e446a0c4cdc624a887f, type: 2}
+  - {fileID: 11400000, guid: 796e2506e6ab53447a343db04ccc5739, type: 2}
   betweenFightDialogue:
   - I'll never see deer's the same again...
   - I should be halfway there by now.

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: BookPageButton
   m_EditorClassIdentifier: 
   hoverSound: {fileID: 0}
-  clickSound: {fileID: 8300000, guid: 4533569678bfa2e41b17bc27cf4751e2, type: 3}
+  clickSound: {fileID: 8300000, guid: 7df3cb5fa6e5e7a468b500a7f1a60860, type: 3}
   disabledSound: {fileID: 0}
   randomizePitch: 1
   minPitch: 0.9
-  maxPitch: 1.1
+  maxPitch: 1.2
   volume: 1

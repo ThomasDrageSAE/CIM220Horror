@@ -6,27 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="6abaa505-eda4-4a5f-b2df-1c03f025984f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CIM220Horror/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CIM220Horror/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/MainAudioMixer.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Audio/MainAudioMixer.mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level1/MonsterDataGhost3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterDataPlant1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterDataPlant1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterDataPlant2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterDataPlant2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterDataPlant3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterDataPlant3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterLevelSet2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level2/MonsterLevelSet2.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level3/MonsterDataDeerEyes.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level3/MonsterDataDeerEyes.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level3/MonsterDataWolfDeer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level3/MonsterDataWolfDeer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level4/MonsterDataTImeGuy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level4/MonsterDataTImeGuy.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level3/MonsterLevelSet3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MonsterData/Level3/MonsterLevelSet3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level4/MonsterDataTImeGuy.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MonsterData/Level4/MonsterDataTImeGuy.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GuideRoot --- Ill add Player two features here.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GuideRoot --- Ill add Player two features here.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Books/GhostBook.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Books/GhostBook.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Buttons/BookCloseButton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Buttons/BookCloseButton.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Buttons/BookOpenButton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Buttons/BookOpenButton.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Buttons/BookPageButton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Sounds/Buttons/BookPageButton.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterEncounterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/MonsterEncounterManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/PlantRootPuzzleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/PlantRootPuzzleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Creatures/PlantRootWeakPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Creatures/PlantRootWeakPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameIntroManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameIntroManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PhoneBatteryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PhoneBatteryManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/Plugins/x86_64/lib_burst_generated.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/Plugins/x86_64/lib_burst_generated.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/boot.config" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/boot.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/globalgamemanagers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/globalgamemanagers.assets" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/globalgamemanagers.assets" afterDir="false" />
@@ -37,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets0.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets0.assets.resS" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.assets" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.assets.resS" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.assets.resS" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.resource" beforeDir="false" afterPath="$PROJECT_DIR$/TestBuild/Cim220 Horror Project_Data/sharedassets1.resource" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,8 +65,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MonsterBackgroundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MonsterDialogueManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/NetworkBatteryManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/NetworkGameStateManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/NetworkProgressionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/ProgressionImageUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Networking/SyncedWinScreenUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Phone/PhoneAppButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Phone/TemperatureApp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Phone/UVApp.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,6 +78,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GameOverManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HideDuringDialogue.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/HideDuringTutorial.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MonsterHintButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PauseMenuUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ProgressionDebugTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RemoteBatteryUI.cs" root0="FORCE_HIGHLIGHTING" />
@@ -186,7 +184,7 @@
       <workItem from="1777217091042" duration="5813000" />
       <workItem from="1777225110628" duration="5250000" />
       <workItem from="1777315314227" duration="3418000" />
-      <workItem from="1777344222901" duration="14178000" />
+      <workItem from="1777344222901" duration="15597000" />
     </task>
     <servers />
   </component>

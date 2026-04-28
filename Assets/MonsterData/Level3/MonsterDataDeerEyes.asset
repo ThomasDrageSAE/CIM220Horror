@@ -32,7 +32,7 @@ MonoBehaviour:
   imagePositionOffset: {x: 0, y: 0}
   preserveAspect: 1
   causesTemperatureDrop: 0
-  motionStyle: 3
+  motionStyle: 2
   useGlitchMotion: 0
   gameOverImage: {fileID: -6069193726406939886, guid: 790c02c4567027d4cba5ef1e2095b1f1, type: 3}
   gameOverDialogue: []

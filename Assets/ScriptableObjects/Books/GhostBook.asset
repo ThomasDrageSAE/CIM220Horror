@@ -65,15 +65,6 @@ MonoBehaviour:
     imageB: {fileID: 0}
     imageC: {fileID: 0}
     imageD: {fileID: 2054620009573532433, guid: daad0ca62900cc64583361cbd74adb5e, type: 3}
-  - layout: {fileID: 818466465623097833, guid: 16114899c58a77b40a5e73196b0bc68b, type: 3}
-    textA: Test 2
-    textB: Test 2
-    textC: 
-    textD: 
-    imageA: {fileID: -8853496014264632996, guid: b55209538fcd8394cb4322d22445aa83, type: 3}
-    imageB: {fileID: 0}
-    imageC: {fileID: 0}
-    imageD: {fileID: 0}
   - layout: {fileID: 470820575514630869, guid: 8350bb0e530f4f847bc89e5a6414e355, type: 3}
     textA: There are those that refuse to be seen directly. You can feel their presence,
       but they remain unseen...

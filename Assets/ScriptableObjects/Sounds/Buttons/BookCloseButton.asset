@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BookCloseButton
   m_EditorClassIdentifier: 
   hoverSound: {fileID: 0}
-  clickSound: {fileID: 8300000, guid: 7b5eb314ba0ec2648a5ab5cb00394c30, type: 3}
+  clickSound: {fileID: 8300000, guid: 3aa9cdedf2431ac4ea4466bf63c9e71f, type: 3}
   disabledSound: {fileID: 0}
   randomizePitch: 1
   minPitch: 0.98
